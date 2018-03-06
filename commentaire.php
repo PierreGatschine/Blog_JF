@@ -1,3 +1,24 @@
+<?php
+
+// connection to the Db
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=blog_d_ecrivain;charset=utf8', 'root', 'root');
+
+}
+catch (Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
+}
+
+//recovery of episodes
+$req = $bdd->prepare('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à Hh%imin%ss\') AS date_creation_fr FROM episode WHERE id = ?');
+$req->execute(array($_GET['episode']));
+$data = $req->fetch();
+?>
+
+<! -- Display -->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,26 +29,8 @@
 
 		
 	<body>
-		<h1>Billet simple pour l'Alaska</h1>
-		<p><a href="index.php">Retour à la liste des billets</a></p>
-		<?php
-
-		//connection to the Db
-		try 
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=blog_d_ecrivain;charset=utf8', 'root', 'root');
-			
-		} 
-		catch (Exception $e) 
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-
-		//recovery of episodes
-		$req = $bdd->prepare('SELECT id, title, author, content, DATE_FORMAT(date_creation, \'%d-%m-%Y à ùHh%imin%ss\') AS date_creation_fr FROM episode WHERE id = ?');
-		$req->execute(array($_GET['episode']));
-		$data = $req->fetch();
-		?>
+		<h1>Billet simple pour l'Alaska </h1>
+		<p><a href="Index.php">Retour à la liste des billets</a></p>
 
 		<div class="news">
 		    <h3>
@@ -49,7 +52,7 @@
 		
 
 		// recovery of comments
-		$req = $bdd->prepare('SELECT author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM comment WHERE id_episode = ? ORDER BY date_comment');
+		$req = $bdd->prepare('SELECT author, content, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM comment WHERE id_episode = ? ORDER BY date_comment');
 		$req->execute(array($_GET['episode']));
 
 
