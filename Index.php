@@ -38,7 +38,7 @@
 		    
 		    <p>
 		 <?php
-		    // On affiche le contenu du billet
+		    // On affiche le contenu de l'épisode
 		    echo nl2br(htmlspecialchars($data['content']));
 		 ?>
 		    <br />

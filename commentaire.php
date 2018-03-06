@@ -49,15 +49,15 @@
 		
 
 		// recovery of comments
-		$req = $bdd->prepare('SELECT author, content, DATE_FORMAT(date_commentaire, \'%d-%m-%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM comment WHERE id_episode = ? ORDER BY date_comment');
+		$req = $bdd->prepare('SELECT author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM comment WHERE id_episode = ? ORDER BY date_comment');
 		$req->execute(array($_GET['episode']));
 
 
 		while ($data = $req->fetch())
 		{
 		?>
-		<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
-		<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+		<p><strong><?php echo htmlspecialchars($data['author']); ?></strong> le <?php echo $data['date_commentaire_fr']; ?></p>
+		<p><?php echo nl2br(htmlspecialchars($data['content'])); ?></p>
 		
 		<?php
 		}
