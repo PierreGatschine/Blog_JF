@@ -1,11 +1,11 @@
 <?php
 
-require_once("model/PostManager.php");
-require_once("model/CommentManager.php");
+require_once('model/PostManager.php');
+require_once('model/CommentManager.php');
 
 function listPosts()
 {
-    $postManager = new PostManager();
+    $postManager = new NotreAgenceWeb\blog_JF\Model\PostManager();
     $posts = $postManager->getPosts();// Appel d'une fonction de cet objet
 
     require('view/frontend/listPostsView.php');
@@ -13,8 +13,8 @@ function listPosts()
 
 function post()
 {
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
+    $postManager = new NotreAgenceWeb\blog_JF\Model\PostManager();
+    $commentManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComment($_GET['id']);

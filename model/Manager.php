@@ -1,6 +1,6 @@
 <?php
 
-namespace JeanForteroche\blog_JF\Model;
+namespace NotreAgenceWeb\blog_JF\Model;
 
     class Manager
     {
