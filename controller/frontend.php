@@ -1,22 +1,31 @@
 <?php
-require('model/frontend.php');
+
+require_once("model/PostManager.php");
+require_once("model/CommentManager.php");
 
 function listPosts()
 {
-    $posts = getPosts();
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts();// Appel d'une fonction de cet objet
 
     require('view/frontend/listPostsView.php');
 }
 
 function post()
 {
-    $post = getPost($_GET['id']);
-    $comment = getComment($_GET['id']);
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->getComment($_GET['id']);
 
     require('view/frontend/postView.php');
 }
+
 function addComment($episodeId, $author, $comment)
 {
+    $commentManager = new CommentManager();
+
     $affectedLines = postComment($episodeId, $author, $comment);
 
     if ($affectedLines === false) {
