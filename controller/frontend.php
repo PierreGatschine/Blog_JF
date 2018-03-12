@@ -22,11 +22,11 @@ function post()
     require('view/frontend/postView.php');
 }
 
-function addComment($episodeId, $author, $comment)
+function addComment($episodeId, $author, $comment, $report)
 {
-    $commentManager = new CommentManager();
+    $commentManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
 
-    $affectedLines = postComment($episodeId, $author, $comment);
+    $affectedLines = $commentManager->postComment($episodeId, $author, $comment);
 
     if ($affectedLines === false) {
        throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -34,6 +34,12 @@ function addComment($episodeId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $episodeId);
     }
+}
+
+function signal() {
+    $commentSignal = new CommentManager();
+    $signal = $commentSignal->reportComment($id);
+    header('Location : index.php#comments');
 }
 
 

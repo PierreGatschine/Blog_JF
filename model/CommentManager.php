@@ -24,4 +24,15 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
+
+    public function signaledComment($id) {
+        $req = $this->_db->prepare('SELECT id FROM comments WHERE id= :id AND report > 0');
+        $req->execute(array('id' => $id));
+        $signal = $req->fetch();
+        if (empty($signal)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
