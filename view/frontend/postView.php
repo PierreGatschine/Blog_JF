@@ -40,6 +40,10 @@ while ($comment = $comments->fetch())
     <p>
         <?= nl2br(htmlspecialchars($comment['comment'])) ?>
     </p>
+    <p><span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                    <a href="index.php?action=signal&amp;id=<?= $_GET['id']
+            ?>#comments" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> - 
+                    <FONT size="2px"> Le <?= $comment['comment_date_fr'] ?></FONT></p>
 
 <?php
 }

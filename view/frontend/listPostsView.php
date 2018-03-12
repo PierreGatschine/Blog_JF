@@ -7,7 +7,8 @@
 while ($data = $posts->fetch())
 {
 ?>
-    <div class="news">
+<img src="public/images/imageEpisode2.png" alt="imageEpisode2">  
+<div class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
             <em>le <?= $data['creation_date_fr'] ?></em>
