@@ -2,6 +2,7 @@
 
 namespace NotreAgenceWeb\blog_JF\Model;
 require_once("model/Manager.php");
+require_once("model/Comment.php");
 
 class CommentManager extends Manager
 {
@@ -25,8 +26,39 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
+    public function showAllComments() {
+        $comments = array();
+        $db = $this->dbConnect();
+        $q = $db->query('SELECT * FROM comment');
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $comments[] = new Comment($data);
+        }
+        return $comments;
+    }
+    public function countComments() {
+        $req = $this->_db->query('SELECT COUNT(*) AS nbcomments, post_id FROM comment WHERE report = 0 GROUP BY post_id');
+        $data = $req->fetchAll();
+        $req->closecursor();
+        return $data;
+    }
+    //front-office : Ils signalent le commentaire : moderation passe à 1
+    public function reportComment($id) {
+        $req = $this->_db->prepare('UPDATE comment SET report = 1 WHERE id = :id');
+        $req->execute(array('id'=> $id));
+    }
+    //back-office : Jean  decide de l'accepter : moderation repasse à 0
+    Public function validate($id) {
+        $req = $this->_db->prepare('UPDATE comment SET report = 0 WHERE id = :id');
+        $req->execute(array('id'=> $id));
+    }
+    //back-office : Jean decide de le bannir : moderation passe à 2s
+    public function ban($id) {
+        $req = $this->_db->prepare('UPDATE comment SET report = 2 WHERE id = :id');
+        $req->execute(array('id'=> $id));
+    }
+
     public function signaledComment($id) {
-        $req = $this->_db->prepare('SELECT id FROM comments WHERE id= :id AND report > 0');
+        $req = $this->_db->prepare('SELECT id FROM comment WHERE id= :id AND report > 0');
         $req->execute(array('id' => $id));
         $signal = $req->fetch();
         if (empty($signal)) {
