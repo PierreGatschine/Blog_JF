@@ -6,7 +6,7 @@ require_once('model/CommentManager.php');
 function listPosts()
 {
     $postManager = new NotreAgenceWeb\blog_JF\Model\PostManager();
-    $posts = $postManager->getPosts();// Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts();
 
     require('view/frontend/listPostsView.php');
 }
@@ -22,25 +22,43 @@ function post()
     require('view/frontend/postView.php');
 }
 
-function addComment($episodeId, $author, $comment, $report)
+function addComment($episodeId, $author, $comment)
 {
     $commentManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
 
     $affectedLines = $commentManager->postComment($episodeId, $author, $comment);
 
     if ($affectedLines === false) {
-       throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    } else {
         header('Location: index.php?action=post&id=' . $episodeId);
     }
 }
 
-function signal() {
+
+
+/*
+ * function signal()
+ * {
     $commentSignal = new CommentManager();
     $signal = $commentSignal->reportComment($id);
     header('Location : index.php#comments');
+    }
+ */
+
+// COMMENTS
+function signal($commentId, $postId)
+{
+    $commentManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
+    $signal = $commentManager->signalComment($commentId);
+    if ($signal > 0) {
+        header('Location: index.php?action=post&id=' . $postId);
+    } else {
+        $this->error('Ce message a déjà été signalé et va être modéré prochainement, merci !');
+    }
 }
+
+
 
 
 
