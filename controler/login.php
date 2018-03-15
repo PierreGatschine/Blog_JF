@@ -2,6 +2,7 @@
 
 require_once 'model/userManager.php';
 
+
 /*
  * $userManager = new UserManager();
 if (!empty($_POST)) {
@@ -31,6 +32,7 @@ if (!empty($_POST)) {
     }
 }
  */
+
 function connexion($login, $password) 
 {
     $adminManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
@@ -48,3 +50,5 @@ function connexion($login, $password)
         $this->error('Votre pseudo ou votre mot de passe est incorrect !');
     }
 }
+
+

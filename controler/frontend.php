@@ -31,11 +31,9 @@ function addComment($episodeId, $author, $comment)
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     } else {
-        header('Location: index.php?action=post&id=' . $episodeId);
+        header('Location: index.php?action=post&amp;id=' . $episodeId);
     }
 }
-
-
 
 /*
  * function signal()
@@ -52,7 +50,7 @@ function signal($commentId, $postId)
     $commentManager = new NotreAgenceWeb\blog_JF\Model\CommentManager();
     $signal = $commentManager->signalComment($commentId);
     if ($signal > 0) {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=post&amp;id=' . $postId);
     } else {
         $this->error('Ce message a déjà été signalé et va être modéré prochainement, merci !');
     }

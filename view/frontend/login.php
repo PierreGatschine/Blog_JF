@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 
+<div class="container">
 
     <h2>Connexion administrateur</h2>
 
@@ -15,4 +16,11 @@
         </form>
     </div>
 
+
+
 <?php $content = ob_get_clean(); ?>
+
+
+<?php require('template.php'); ?>
+
+</div>
