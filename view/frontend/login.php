@@ -6,15 +6,16 @@
 
     <h2>Connexion administrateur</h2>
 
-    <div class="news">
-        <form action="index.php?action=login" method="post" class="connexionAdmin">
-            <label for="login">Login</label>
+    
+        <!--<form action="/blog_JF/controller/connexion.php" method="post">-->
+            <form action="index.php?action=connexion" method="post">
+            <label for="login">Pseudo</label>
             <input type="login" id="login" name="login" required /><br />
             <label for="password">Mot de passe</label>
             <input type="password" class="password" name="password" required /><br />
             <input type="submit" name="connexion" class="buttonStyle" value="Connexion" />
         </form>
-    </div>
+    
 
 
 
