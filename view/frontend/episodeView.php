@@ -1,4 +1,4 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = htmlspecialchars($episode['title']); ?>
 
 <?php ob_start(); ?>
 
@@ -7,15 +7,15 @@
     <p><a href="index.php">Retour à la liste des épisodes</a></p>
 
 
-    <div class="news">
-       <h3><?= htmlspecialchars($post['title']) ?></h3>
-       <p><em>le <?= $post['creation_date_fr'] ?></em></p>
-       <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
-   </div>
+    <div>
+     <h3><?= htmlspecialchars($episode['title']) ?></h3>
+     <p><em>le <?= $episode['creation_date_fr'] ?></em></p>
+     <p><?= nl2br(htmlspecialchars($episode['content'])) ?></p>
+ </div>
 
-   <h2>Commentaires</h2>
+ <h2>Commentaires</h2>
 
-   <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+ <form action="index.php?action=addComment&amp;id=<?= $episode['id'] ?>" method="post">
     <div>
         <label for="author">Pseudo</label><br />
         <input type="text" id="author" name="author" />
@@ -41,22 +41,20 @@ while ($comment = $comments->fetch())
     </p>
     <p><span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
 
-        <a href="index.php?action=reportComment&amp;id= <?=  $comment['id'] ?> &amp; episode_id=<?= $comment['episode_id'] ?>&amp;']id= <//?= $_GET ['id'] ,>
-        ?>#comments" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> <br />
+        <!--<a #comments" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> <br />-->
+        <a href="index.php?action=reportComment&amp;id=<?= $data['id'] ?>&amp;episode_id=<?= $data['episode_id'] ?>&amp;idmax=<?= $_GET['idmax'] ?>" class="warning" onclick="return confirm('Confirmer le signalement ?');">Signaler ce contenu </a>
         Le <?= $comment['comment_date_fr'] ?></p>
-       <!-- <a href="index.php?action=reportComment&amp;
-        ?>#comments" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> <br />
-        Le <//?= $comment['comment_date_fr'] ?></p> -->
 
-<?php
+
+        <?php
     }
 
     $comments->closeCursor();
 
 
-?>
+    ?>
 
-<?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
 </div>
 

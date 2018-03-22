@@ -4,24 +4,32 @@ namespace NotreAgenceWeb\blog_JF\Model;
 
 require_once('model/Manager.php');
 
-class PostManager extends Manager
+class EpisodeManager extends Manager
 {
-    public function getPosts()
+    public function getEpisodes()
     {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\') 
-            AS creation_date_fr FROM episode ORDER BY create_date DESC LIMIT 0, 6');
+            AS creation_date_fr, left(content, 50) AS extrait FROM episode ORDER BY create_date DESC LIMIT 0, 6');
         return $req;
     }
 
-    public function getPost($episodeId)
+    public function getEpisode($episodeId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\')
             AS creation_date_fr FROM episode WHERE id = ?');
         $req->execute(array($episodeId));
-        $post = $req->fetch();
-        return $post;
+        $episode = $req->fetch();
+        return $episode;
+    }
+
+    public function getMaxId()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT MAX(id) AS id_max FROM episode');
+        $req = $req->fetch();
+        return $req;
     }
 
     public function addEpisode($content, $title)
@@ -32,19 +40,19 @@ class PostManager extends Manager
         return $affectedLines;
     }
 
-    public function deleteEpisode($episodeId)
-    {
-        $db = $this->dbConnect();
-        $episode = $db->prepare('DELETE FROM episode WHERE id=?');
-        $episode->execute(array($episodeId));
-        return $episode;
-    }
-
-    public function updateEpisode($episodeId, $title, $content)
+    public function updateEpisode($idEpisode, $title, $content)
     {
         $db = $this->dbConnect();
         $episode = $db->prepare('UPDATE episode SET title=?, content=? WHERE id=?');
-        $episode->execute(array($episodeId, $title , $content));
+        $episode->execute(array($idEpisode, $title , $content));
+        return $episode;
+    }
+
+    public function deleteEpisode($idEpisode)
+    {
+        $db = $this->dbConnect();
+        $episode = $db->prepare('DELETE FROM episode WHERE id=?');
+        $episode->execute(array($idEpisode));
         return $episode;
     }
 }

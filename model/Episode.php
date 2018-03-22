@@ -5,7 +5,7 @@ namespace NotreAgenceWeb\blog_JF\Model;
 
 
 
-class Post {
+class Episode {
     protected $_id;
     protected $_title;
     protected $_author;

@@ -1,67 +1,51 @@
 <?php
 
-require_once('model/PostManager.php');
+require_once('model/EpisodeManager.php');
 require_once('model/CommentManager.php');
 
-use \NotreAgenceWeb\blog_JF\Model\PostManager;
+use \NotreAgenceWeb\blog_JF\Model\EpisodeManager;
 use  \NotreAgenceWeb\blog_JF\Model\CommentManager;
 
-function listPosts()
+function listEpisodes()
 {
-    $postManager = new PostManager();
-    $posts = $postManager->getPosts();
+    $episodeManager = new EpisodeManager();
+    $episodes = $episodeManager->getEpisodes();
+    $maxId = $episodeManager->getMaxId();
 
-    require('view/frontend/listPostsView.php');
+    require('view/frontend/listEpisodesView.php');
 }
 
-function post()
+function episode()
 {
-    $postManager = new PostManager();
+    $episodeManager = new EpisodeManager();
     $commentManager = new CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComment($_GET['id']);
+    $episode = $episodeManager->getEpisode($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
 
-    require('view/frontend/postView.php');
+    require('view/frontend/episodeView.php');
 }
 
-function addComment($episodeId, $author, $comment)
+function addComment($episodeId, $idMax, $author, $comment)
 {
     $commentManager = new CommentManager();
 
-    $affectedLines = $commentManager->postComment($episodeId, $author, $comment);
+    $affectedLines = $commentManager->episodeComment($episodeId, $author, $comment);
 
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter le commentaire !");
     } else {
-        header('Location: index.php?action=postView&amp;id=' . $episodeId);
+        header('Location: index.php?action=episode&id=' . $episodeId . '&idmax=' . $idMax);
     }
 }
 
-function reportComment($commentId, $episodeId)
+function reportComment($idComment, $episodeId, $idMax)
 {
     $commentManager = new CommentManager();
-    $signal = $commentManager->reportComment($commentId);
-    if ($signal > 0) {
-        header('Location: index.php?action=postView&amp;id=' . $episodeId);
-    } else {
-        $this->error('Ce message a déjà été signalé et va être modéré prochainement, merci !');
+    $report = $commentManager->reportComment($idComment);
+    if ($report > 0) {
+        header('Location: index.php?action=episode&id=' . $episodeId . '&idmax=' . $idMax);
+    } //else {
+      //  $this->error('Ce message a déjà été signalé, nous allons procéder à sa modération.');
+    //}
     }
-}
-
-
-
-// COMMENTS
-/*
- * function signal()
- {
-    $commentSignal = new CommentManager();
-    $signal = $commentSignal->reportComment($id);
-    header('Location : index.php#comments');
- }
- */
-
-
-
-
-

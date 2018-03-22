@@ -1,4 +1,4 @@
-
+<?php $title = "Page d'accueil"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,9 +32,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="hidden"><a href="#page-top"></a></li>
-                    <li><a href="index.php">Page d'accueil</a></li>
-                    <li><a href="listPostsView.php">Liste des épisodes</a></li>
-                    <li><a href="auteur.php">L'auteur</a></li>
+                    <li><a href="http://localhost:8888/Blog_JF/index.php">Page d'accueil</a></li>
+                    <li><a href="http://localhost:8888/Blog_JF/view/frontend/listEpisodesView.php">Liste des épisodes</a></li>
+                    <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
                 </ul>
             </div>
         </div>
@@ -104,7 +104,7 @@
         </footer>
 
         <footer class="text-right">
-            <a href="view/frontend/login.php">Administration du site</a>
+            <a href="index.php?action=login">Administration du site</a>
         </footer>
 
 
@@ -113,7 +113,9 @@
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Javascript de Bootstrap -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
     </body>
 
     </html>

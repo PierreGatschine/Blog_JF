@@ -1,81 +1,103 @@
 <?php
 
 namespace NotreAgenceWeb\blog_JF\Model;
+
 require_once("model/Manager.php");
 require_once("model/Comment.php");
-
 class CommentManager extends Manager
 {
-    public function getComment($episodeId)
+  public function getComments($episodeId)
+  {
+    $db = $this->dbConnect();
+    $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') 
+      AS comment_date_fr FROM comment WHERE episode_id = ? ORDER BY date_comment DESC');
+    $comments->execute(array($episodeId));
+
+    return $comments;
+  }
+
+  public function getComment($idComment)
+  {
+    $db = $this->dbConnect();
+    $comment = $db->prepare('SELECT *, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE id = ?');
+    $comment->execute(array($idComment));
+    $comment = $comment->fetch();
+    return $comment;
+
+  }
+
+  public function episodeComment($episodeId, $author, $comment)
+  {
+    $db = $this->dbConnect();
+    $comments = $db->prepare('INSERT INTO comment (episode_id, author, comment, date_comment) VALUES(?, ?, ?, NOW())');
+    $affectedLines = $comments->execute(array($episodeId, $author, $comment));
+
+    return $affectedLines;
+  }
+
+  public function getAllComments()
+  {
+    $db = $this->dbConnect();
+    $comments = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment ORDER BY date_comment DESC');
+    return $comments;
+  }
+
+  public function selectComment($idComment)
+  {
+    $db = $this->dbConnect();
+    $comment = $db->prepare('SELECT id, comment, episode_id FROM comment WHERE id = ?');
+    $comment->execute(array($idComment));
+    $comment = $comment->fetch();
+    return $comment;
+  }
+
+  public function getMaxComment($episodeId)
+  {
+    $db = $this->dbConnect();
+    $req = $db->prepare('SELECT COUNT(*) AS nbr_id FROM comment WHERE episode_id = ?');
+    $req->execute(array($episodeId));
+    $req = $req->fetch();
+    return $req;
+  }
+
+
+    public function updateComment($idComment, $comment) // fonction qui permet de modifier un commentaire
     {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') 
-    AS comment_date_fr FROM comment WHERE episode_id = ? ORDER BY date_comment DESC');
-        $comments->execute(array($episodeId));
-
-        return $comments;
-
+      $db = $this->dbConnect();
+      $update = $db->prepare('UPDATE comment SET comment = ?, report = 0 WHERE id = ?');
+      $update->execute(array($comment, $idComment));
+      return $update;
     }
 
-    public function postComment($episodeId, $author, $comment)
-    {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comment (episode_id, author, comment, date_comment) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($episodeId, $author, $comment));
-
-        return $affectedLines;
+    public function deleteComment($idComment) {
+      $db = $this->dbConnect();
+      $comment = $db->prepare( 'DELETE FROM comment WHERE id = ?');
+      $comment->execute(array($idComment));
+      return $comment;
     }
 
-
-    public function selectComment($commentId)
+    public function reportComment($idComment)
     {
-        $db = $this->dbConnect();
-        $comment = $db->prepare('SELECT id, comment, episode_id FROM comment WHERE id = ?');
-        $comment->execute(array($commentId));
-        $comment = $comment->fetch();
-        return $comment;
-    }
-
-    public function updateComment($commentId, $comment) // fonction qui permet de modifier un commentaire
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comment SET comment = ?, report = 0 WHERE id = ?');
-        $req->execute(array($comment, $commentId));
-        $edit = $req->rowCount(); // permet de compter le nombre de ligne affectées par la dernière requête
-        return $edit;
-    }
-
-    public function deleteComment($commentId) {
-        $db = $this->dbConnect();
-        $req = $db->prepare( 'DELETE FROM comment WHERE id = ?');
-        $req->execute(array($commentId));
-        $delete = $req->rowCount(); // permet de compter le nombre de ligne affectées par la dernière requête
-        return $delete;
-    }
-
-    public function reportComment($commentId)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comment SET report = 1 WHERE id = ?');
-        $req->execute(array($commentId));
-        $signal = $req->rowCount(); // permet de compter le nombre de ligne affectées par la dernière requête
-        return $signal;
+      $db = $this->dbConnect();
+      $report = $db->prepare('UPDATE comment SET report = 1 WHERE id = ?');
+      $report->execute(array($idComment));
+      return $report;
     }
 
     public function testReport()
     {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM comments WHERE report = 1');
-        $req = $req->fetch();
-        return $req;
+      $db = $this->dbConnect();
+      $req = $db->query('SELECT * FROM comment WHERE report = 1');
+      $req = $req->fetch();
+      return $req;
     }
     public function getReport()
     {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr  FROM comment WHERE report= 1 ORDER BY date_comment DESC');
-        return $req;
+      $db = $this->dbConnect();
+      $req = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr  FROM comment WHERE report= 1 ORDER BY date_comment DESC');
+      return $req;
     }
-}
+  }
 
 /*
        public function showAllComments() {
