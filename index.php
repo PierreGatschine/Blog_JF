@@ -35,7 +35,7 @@ try {
         }
         elseif ($_GET['action'] == 'connexion')
         {
-            if (!empty($_POST['login']) && !empty($_POST['password']))
+            if (isset($_POST['login']) && isset($_POST['password']))
             {
                 connexion($_POST['login'], $_POST['password']);
             }
@@ -50,12 +50,19 @@ try {
         }
         // Backend
         else
+
         {
+            session_start();
+            
             if (isset($_SESSION['login']))
             {
                 if ($_GET['action'] == 'admin')
                 {
                     admin();
+                }
+                elseif ($_GET['action'] == 'listPost')
+                {
+                    listPosts();
                 }
                 elseif ($_GET['action'] == 'editEpisode')
                 {
@@ -173,6 +180,6 @@ try {
 
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
-    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 5 secondes';
-    echo '<META HTTP-EQUIV="Refresh" CONTENT="5;index.php?action=listEpisodes">';
+    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 10 secondes';
+    //echo '<META HTTP-EQUIV="Refresh" CONTENT="10;index.php?action=listEpisodes">';
 }

@@ -3,18 +3,17 @@
 
 <?php ob_start(); ?>
 
+<header>
+    <h4 class="">Edition</h4>
+
+</header>
+
+
 <div class="container" >
 
-    <p><a href="admin.php">Retour à la page d'administration du blog</a></p>
-
-    <header>
-        <h4 class="">Edition</h4>
-
-    </header>
+    <p><a href="index.php?action=admin">Retour à la page d'administration du blog</a></p>
 
     <section>
-        <div class="container">
-
             <!-- Editer un nouvel épisode -->
             <a class="waves-effect waves-light btn blue" href="index.php?action=writeEpisode" id="buttonWriteEpisode"><i class="material-icons left">create</i>Editer un nouvel épisode  </a>
             <!-- FIN -->

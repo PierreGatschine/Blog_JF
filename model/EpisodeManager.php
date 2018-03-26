@@ -9,7 +9,7 @@ class EpisodeManager extends Manager
     public function getEpisodes()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\') 
+        $req = $db->query('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y \') 
             AS creation_date_fr, left(content, 50) AS extrait FROM episode ORDER BY create_date DESC LIMIT 0, 6');
         return $req;
     }
@@ -17,7 +17,7 @@ class EpisodeManager extends Manager
     public function getEpisode($episodeId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y à %Hh%imin%ss\')
+        $req = $db->prepare('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y \')
             AS creation_date_fr FROM episode WHERE id = ?');
         $req->execute(array($episodeId));
         $episode = $req->fetch();

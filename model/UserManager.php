@@ -12,9 +12,14 @@ class UserManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT * FROM user WHERE login = ? AND password = ?');
 		$req->execute(array($login,$password));
-		$req = $req->fetch();
-		return $req;
+		$res= $req->fetch();
+		$req->closeCursor();
+
+		return $res;
+
+
 	}
+
 }
 
 

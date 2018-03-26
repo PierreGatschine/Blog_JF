@@ -4,16 +4,21 @@
 
 <div class="container" >
 
-    <p><a href="index.php">Retour à la liste des épisodes</a></p>
+    <p><a href="index.php">Retour à la page d'accueil</a></p>
 
 
     <div>
      <h3><?= htmlspecialchars($episode['title']) ?></h3>
-     <p><em>le <?= $episode['creation_date_fr'] ?></em></p>
-     <p><?= nl2br(htmlspecialchars($episode['content'])) ?></p>
+     <p>
+        <em>publié le <?= $episode['creation_date_fr'] ?></em>
+    </p>
+     <p>
+        <?= nl2br(htmlspecialchars($episode['content'])) ?>
+            
+    </p>
  </div>
 
- <h2>Commentaires</h2>
+ <h5>Commentaires</h5>
 
  <form action="index.php?action=addComment&amp;id=<?= $episode['id'] ?>" method="post">
     <div>
@@ -33,9 +38,14 @@
 while ($comment = $comments->fetch())
 {
     ?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong>
-        <br /> le <?= $comment['comment_date_fr'] ?>
+    <p>
+        <strong><?= htmlspecialchars($comment['author']) ?></strong>
+    </p> <br />
+
+    <p>
+        le <?= $comment['comment_date_fr'] ?>
     </p>
+    
     <p>
         <?= nl2br(htmlspecialchars($comment['comment'])) ?>
     </p>

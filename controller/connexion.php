@@ -14,6 +14,11 @@ function connexion($login, $password)
 {
     $userManager = new userManager();
     $user = $userManager->connect($login, $password);
+
+    var_dump($user);
+    var_dump($login);
+    var_dump($password);
+
     if (!empty($user))
     {
         session_start();
@@ -24,5 +29,7 @@ function connexion($login, $password)
     else
     {
         throw new Exception(' utilisateur inconnu');
+
+
     }
 }

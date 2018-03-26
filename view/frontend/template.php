@@ -1,121 +1,94 @@
-<?php $title = "Page d'accueil"; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?= $title ?></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/css/style.css">
+    
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/frontend/style.css">
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar">
 
-<!-- Navbar
-  ================================================== -->
-  <header>
-    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top"><strong>Jean Forteroche</strong>   Billet simple pour l'Alaska</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden"><a href="#page-top"></a></li>
+
+<body>
+
+
+<!-- Navbar -->
+          
+
+    <div class="navbar-fixed" id="nav">
+        <nav class="light-blue darken-4" role="navigation">
+            <div class="nav-wrapper container"><a href="#!" class="brand-logo"><strong>JFR</strong></a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
                     <li><a href="http://localhost:8888/Blog_JF/index.php">Page d'accueil</a></li>
-                    <li><a href="http://localhost:8888/Blog_JF/view/frontend/listEpisodesView.php">Liste des épisodes</a></li>
                     <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
-                </ul>
+                </ul> 
+                
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </div>
 
 
-<!-- Corps de page
-    ================================================== -->
+<!--Haut de page -->
+
+
+<div class="section no-pad-bot" id="index-banner">
     <div class="container">
+     <br><br>
+     <h1 class="header center text-">Billet simple pour l'Alaska</h1>
+         <div class="row center">
+            <h2 class="header col s12 text">Jean Forteroche</h2>
 
-        <div class="row">
-            <img class="col-sm-12" src="public/images/entete.png" alt="Episodes2" id="imageEpisode"> </img>
-            <div class="row">
-             <div class="col align-self-center">
-                <h2 class="text-center">Billet simple pour l'Alaska</h2>
-                <h3 class="text-center">Jean Forteroche</h3>
-            </div>
         </div>
-    </div>
-
+        <br><br>
+     </div>   
 </div>
-<!--<div class="container">
 
-    <div class="row">
-        <img class="col-md-9" src="public/images/entete.png" alt="Episodes2" id="imageEpisode"> </img>
-            <div class="row">
-                <div class="col-xs-3">
-                    <h2>Billet simple pour l'Alaska</h2>
-                    <!--<h3 class="text-center">Jean Forteroche</h3>-->
-                <!--</div>
-                <div class="col-xs-5">
-                    <h3 class="text-center">Jean Forteroche</h3>
-                </div>
 
-                <!-- cette derniere section occupe le reste de la grille (4 colonnes) -->
-               <!-- <div class="col-xs-4">
-                    <p>.col-xs-5</p>
-                </div>
-            </div>
-    </div>
-
-</div>-->
+<!-- Corps de page -->
 
 
 <?= $content ?>
 
 
+<!-- Pied de page -->
+
+
+<footer class="text-left">
+    <img src="images/logo.png" alt="logoPartenaire">
+</footer>
+<footer class="text-center">
+    <a class="btn btn-default" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+    <a class="btn btn-default" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+    <p>Site réalisé par NotreAgenceWeb </p>
+    <img src="Logo" alt="logoAgence">
+
+</footer>
+
+<footer class="text-right">
+    <a href="index.php?action=login">Administration du site</a>
+</footer>
 
 
 
 
 
-
-    <!-- Pied de page
-        ================================================== -->
-
-        <footer class="text-left">
-            <img src="Logo" alt="logoPartenaire">
-        </footer>
-        <footer class="text-center">
-            <a class="btn btn-default" href="#"><i class="fa fa-twitter fa-2x"></i></a>
-            <a class="btn btn-default" href="#"><i class="fa fa-facebook fa-2x"></i></a>
-            <p>Site réalisé par NotreAgenceWeb </p>
-            <img src="Logo" alt="logoAgence">
-
-        </footer>
-
-        <footer class="text-right">
-            <a href="index.php?action=login">Administration du site</a>
-        </footer>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+</script>
 
 
+</body>
 
-
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Javascript de Bootstrap -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
-    </body>
-
-    </html>
+</html>

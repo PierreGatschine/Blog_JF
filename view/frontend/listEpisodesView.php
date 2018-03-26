@@ -1,39 +1,39 @@
-<?php $title = "Blog d'écrivain de Jean Forteroche"; ?>
+<?php $title = "Liste des épisodes"; ?>
 
 <?php ob_start(); ?>
 
 
 
 
-
-
-<div class="container" >
-    <section class="col-sm-12">
-        <div class="row">
-
+<div class="container">
+  
             <?php while ($data = $episodes->fetch())
             {
                 ?>
-                <article class="col-sm-4">
+               
+                <div class="row">
+                    <div class="col s12 m7">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="public/images/4.png">
+                                <span class="card-title"><?= htmlspecialchars($data['title']) ?><br /></span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light light-blue darken-4" href="index.php?action=episode&amp;id=<?= $data['id']?>"><span class="licon icon-black"></span><i class="material-icons">add</i></a>
+                            </div>
+                            <div class="card-content">
+                                <?= nl2br(htmlspecialchars($data['content'])) ?> <br />
+                                <br />
+                                <p>
+                                    <em>publié le <?= $data['creation_date_fr'] ?></em>
+                                </p>
+                                <P>
+                                    <!--<a href="index.php?action=episode&amp;id=<//?= $data['id'] ?>"><span class="fa fa-comment" aria-hidden="true"></span></a>-->
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
                     
-                    <img class="col-sm-4" src="public/images/episode1.png">
-
-                    <h3><?= htmlspecialchars($data['title']) ?></h3>
-
-                    <p>
-                        <?= nl2br(htmlspecialchars($data['content'])) ?> <br />
-                        <em><a href="index.php?action=post&amp;id=<//?= $data['id']?>">Lire la suite<span class="licon icon-black"></span></a></em>
-                        <br />
-                        <em>le <?= $data['creation_date_fr'] ?></em>
-                    </p>
-                    <P>
-                        <a href="index.php?action=episode&amp;id=<?= $data['id'] ?>"><span class="fa fa-comment" aria-hidden="true"></span></a>
-                    </p>
-
-                    
-
-                </article> 
-
+                </div>
 
 
                 <?php
@@ -44,10 +44,8 @@
 
             ?>
 
-
-        </div>
-    </section>
 </div>
+
 
 
 
