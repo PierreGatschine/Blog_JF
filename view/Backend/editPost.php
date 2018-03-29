@@ -1,5 +1,5 @@
-<?php session_start(); ?>
 <?php $title= "Publier un épisode"; ?>
+
 
 <?php ob_start(); ?>
 
@@ -18,12 +18,13 @@
             <a class="waves-effect waves-light btn blue" href="index.php?action=writeEpisode" id="buttonWriteEpisode"><i class="material-icons left">create</i>Editer un nouvel épisode  </a>
             <!-- FIN -->
 
-            <table class="striped centered">
+            <table class="responsive-table">
 
-                <!-- ENTETE DU TABLEAU CHAPITRE -->
+
+
                 <thead>
                     <tr>
-                        <th>Numéro</th>
+                        <th>Numéro d'identification</th>
                         <th>Titre</th>
                         <th>Contenu</th>
                         <th>Action</th>
@@ -32,11 +33,10 @@
                 <!-- FIN -->
                 <tbody>
 
-                    <?php
-                    while($data = $episode->fetch())
-                    {
-                        ?>
-                        <!-- LIGNE DU TABLEAU CHAPITRE-->
+                    <?php while ($data = $episodes->fetch())
+            {
+
+                ?>
                         <tr>
                             <td><?= $data['id']; ?></td>
                             <td><?= '<strong>' . $data['title'] . '</strong>'; ?></td>
@@ -48,9 +48,12 @@
                         </tr>
                         <!-- FIN -->
                         <?php
-                    }
-                    $chapters->closeCursor();
-                    ?>
+
+            }
+
+            $episodes->closeCursor();
+
+            ?>
 
                 </tbody>
             </table>
@@ -58,6 +61,7 @@
     </section>
 
 </div>
+
 
 <?php $content = ob_get_clean(); ?>
 

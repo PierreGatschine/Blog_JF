@@ -24,7 +24,7 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         } elseif ($_GET['action'] == 'reportComment') {
-            if (isset($_GET['id']) && $_GET['episodeId'] && $_GET['idmax']) {
+            if (isset($_GET['id']) && isset($_GET['episodeId']) && isset($_GET['idmax'])) {
                 reportComment($_GET['id'], $_GET['episodeId'], $_GET['idmax']);
             } else {
                 throw new Exception("L'identifiant du billet n'existe pas !");
@@ -48,7 +48,9 @@ try {
         {
             listEpisodes();
         }
+
         // Backend
+        
         else
 
         {
@@ -60,7 +62,7 @@ try {
                 {
                     admin();
                 }
-                elseif ($_GET['action'] == 'listPost')
+                elseif ($_GET['action'] == 'listPosts')
                 {
                     listPosts();
                 }

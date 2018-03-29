@@ -9,15 +9,15 @@ class EpisodeManager extends Manager
     public function getEpisodes()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y \') 
-            AS creation_date_fr, left(content, 50) AS extrait FROM episode ORDER BY create_date DESC LIMIT 0, 6');
+        $req = $db->query('SELECT id, title, author, content, image, DATE_FORMAT(create_date, \'%d-%m-%Y \') 
+            AS creation_date_fr, SUBSTR(content, 1, 500) AS extract FROM episode ORDER BY create_date DESC LIMIT 0, 6');
         return $req;
     }
 
     public function getEpisode($episodeId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, author, content, DATE_FORMAT(create_date, \'%d-%m-%Y \')
+        $req = $db->prepare('SELECT id, title, author, content, image,  DATE_FORMAT(create_date, \'%d-%m-%Y \')
             AS creation_date_fr FROM episode WHERE id = ?');
         $req->execute(array($episodeId));
         $episode = $req->fetch();
@@ -35,7 +35,7 @@ class EpisodeManager extends Manager
     public function addEpisode($content, $title)
     {
         $db = $this->dbConnect();
-        $episode = $db->prepare('INSERT INTO episode(title, content, create_date) VALUES (?,?,NOW())');
+        $episode = $db->prepare('INSERT INTO episode(title, content, image, create_date) VALUES (?,?,NOW())');
         $affectedLines = $episode->execute(array($title, $content));
         return $affectedLines;
     }

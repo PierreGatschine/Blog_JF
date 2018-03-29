@@ -25,9 +25,8 @@ function validateDelete()
 
 function listPosts()
 {
-    $postManager = new EpisodeManager();
-    $commentManager = new CommentManager();
-    $posts = $postManager->getEpisodes();
+    $episodeManager = new EpisodeManager();
+    $episodes = $episodeManager->getEpisodes();
 
     require ('view/backend/listPosts.php');
 }
@@ -110,7 +109,7 @@ function changeComment($commentId)
 {
     $commentManager = new CommentManager();
     $comment = $commentManager->getComments($commentId);
-    require('view/backend/write.php');
+    require('view/backend/manageComments.php');
 }
 
 function updateComment($idComment, $comment)
@@ -135,79 +134,3 @@ function deleteComment($idComment)
   }
 }
 
-/*function addEpisode() {
-    $title = htmlspecialchars($_POST['title']);
-    $content = $_POST['content'];
-    if ((!empty($title)) && (!empty($content))) {
-        $post = new post();
-        $post->setTitle($title);
-        $post->setContent($content);
-        $post->setUserId('1');
-
-        $episodeAdd = new PostManager();
-        $addEpisode = $episodeAdd->addPost($post);
-
-        header('Location: editPost.php');
-    }else {
-        throw new Exception("L'episode n'a pas été ajouté");
-    }
-}
-function updateEpisode()
-{
-    $title = htmlspecialchars($_POST['title']);
-    $content = $_POST['content'];
-    $id = htmlspecialchars($_POST['id']);
-    if ((!empty($title)) && (!empty($content)) && (!empty($id))) {
-        $post = new Post();
-        $post->setTitle($title);
-        $post->setContent($content);
-        $episodeUpdate = new PostManager();
-        $updateEpisode = $episodeUpdate->updatePost($post);
-        header('Location : admin.php?action=editPost');
-    }else {
-        throw new Exception("L'episode n'a pas été modifié");
-    }
-}
-
-function deleteEpisode() {
-    $id = htmlspecialchars($_POST['id']);
-
-    if(!empty($id)){
-
-        $deleteEpisode =new PostManager();
-        $EpisodeDelete = $deleteEpisode ->deletePost($id);
-
-        header('Location : admin.php?action=editPost');
-    }else {
-        throw new Exception("L'episode n'a pas été supprimé");
-    }
-}
-
-function updateComment()
-{
-    $commentManager = new CommentManager();
-    $commentManager->updateComment($_POST['author'], $_POST['comment'], $_GET['id']);
-    header('Location: index.php');
-}
-
-function deleteComment($getid) {
-    $commentmanager = new CommentManager();
-    $comment = $commentManager->deleteComment($_GET['id']);
-    header('Location : admin.php?action=deleteComment');
-}
-
-// Reporte les commentaires signalés
-    function reportComment($episodeId, $id, $commentManager)
-    {
-        if (isset($report)) {
-            if ($commentManager->reportComment($report) === FALSE) {
-                $commentManager->reportcomment($report);
-                $commentManager->validate($id);
-            } else {
-                $commentManager->updateSignaled();
-                echo 'Attention message déjà signalé';
-            }
-        }
-        header('Location: index.php?action=comment&id=' . $postId, $id);
-    }
-*/

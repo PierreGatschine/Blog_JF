@@ -1,22 +1,26 @@
 <?php $title = "Liste des épisodes"; ?>
 
+
+<?php ob_start(); ?>
+
+
 <div class="container" >
-    <section class="col-sm-12">
+    
         <div class="row">
+<div class="col-sm-12">
 
             <?php while ($data = $episodes->fetch())
             {
+
                 ?>
                 <article class="col-sm-4">
+                     
 
+
+                    <img src=" <?= $data['image'] ?>" />
                     <h3><?= htmlspecialchars($data['title']) ?></h3>
                     <p><?= nl2br(htmlspecialchars($data['content'])) ?></p>
                     <p><?= $data['creation_date_fr'] ?></p>
-
-                    <P>
-                        <a href="index.php?action=episode&amp;id=<?= $data['id'] ?>"><span class="fa fa-comment" aria-hidden="true"></span></a>
-                    </p>
-
 
 
                 </article>
@@ -33,9 +37,11 @@
 
 
         </div>
-    </section>
+    </div>
 </div>
 
 
 
 <?php $content = ob_get_clean(); ?>
+
+<?php require('templateBackend.php'); ?>

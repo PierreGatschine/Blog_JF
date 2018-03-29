@@ -10,37 +10,103 @@
 
     <p><a href="http://localhost:8888/Blog_JF/index.php"> Se déconnecter</a></p>
 
-    <a class="waves-effect waves-light btn blue" href="index.php?action=writeChapter" id="buttonWriteChapter"><i class="material-icons left">create</i>Créer un nouveau chapitre</a>
 
-    <section>
-        <div class="col-lg-2">
-            <a href="index.php?action=listPosts" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Liste des épisodes</a>
-        </div>
-        <div class="col-lg-2">
-            <a href="index.php?action=editPost" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Ecrire</a>
-        </div>
-        <div class="col-lg-2">
-            <a href="" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Publier</a>
-        </div>
-    </section>
+    <div class="row">
+        <div class="col s4">
+           <div class="card grey darken-3">
+            <div class="card-content white-text">
+                
+                <p><span class="card-title">Liste<br /> des épisodes publiés</span></p>
+                <p></p>
+            </div>
+            <div class="card-action">
+              <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=listPosts" id="buttonList"><i class="material-icons center">list</i></a>
+          </div>
+      </div>
+  </div>
 
-    <section>
-        <div class="col-lg-2">
-            <a href="" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Commentaires signalés</a>
+
+
+  <div class="col s4">
+      <div class="card grey darken-3">
+        <div class="card-content white-text">
+            
+            <span class="card-title">Ecrire<br /> un nouvel épisode</span>
+            <p></p>
         </div>
-        <div class="col-lg-2">
-            <a href="editPost.php" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Modérer</a>
+        <div class="card-action">
+          <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=writeEpisode" id="buttonWrite"><i class="material-icons center">create</i></a>
+      </div>
+  </div>
+</div>
+
+
+<div class="col s4">
+  <div class="card grey darken-3">
+    <div class="card-content white-text">
+        
+        <span class="card-title">Publier<br /> un nouvel épisode</span>
+        <p></p>
+    </div>
+    <div class="card-action">
+      <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=editPost" id="buttonedit"><i class="material-icons center">publish</i></a>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="row">
+
+    <div class="col s4">
+      <div class="card grey darken-3">
+        <div class="card-content white-text">
+            
+            <span class="card-title">Commentaires<br /> signalés</span>
+            <p></p>
         </div>
-        <div class="col-lg-2">
-            <a href="" class="btn btn-custom2 btn-lg" role="button" >
-                <span class=" "></span><br><br>Supprimer</a>
+        <div class="card-action">
+          <div class="row">
+          <div class="col s2 offset-s8">
+          <a class="btn-floating btn-large  rigth waves-effect waves-light blue" href="index.php?action=manageComments" id="buttonCommentt"><i class="material-icons center">comment</i></a>
         </div>
-    </section>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="col s4">
+  <div class="card grey darken-3">
+    <div class="card-content white-text">
+        
+        <span class="card-title">Commentaires<br /> à modérer</span>
+        <p></p>
+    </div>
+    <div class="card-action">
+      <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=changeComment" id="buttonModerate"><i class="material-icons center">warning</i></a>
+  </div>
+</div>
+</div> 
+
+
+<div class="col s4 m4">
+  <div class="card grey darken-3">
+    <div class="card-content white-text">
+        
+        <p><span class="card-title">Commentaires<br /> à supprimer</span></p>
+        
+    </div>
+    <div class="card-action">
+      <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=deleteComment" id="buttonDelete"><i class="material-icons center">delete</i></a>
+  </div>
+</div>
+</div>
+</div>
+
 </div>
 
 

@@ -15,9 +15,6 @@ function connexion($login, $password)
     $userManager = new userManager();
     $user = $userManager->connect($login, $password);
 
-    var_dump($user);
-    var_dump($login);
-    var_dump($password);
 
     if (!empty($user))
     {

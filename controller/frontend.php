@@ -42,10 +42,10 @@ function addComment($episodeId, $idMax, $author, $comment)
 function reportComment($idComment, $episodeId, $idMax)
 {
     $commentManager = new CommentManager();
-    $report = $commentManager->reportComment($idComment);
+    $report = $commentManager->reportComment($_GET['id']);
     if ($report > 0) {
-        header('Location: index.php?action=episode&id=' . $episodeId . '&idmax=' . $idMax);
-    } //else {
-      //  $this->error('Ce message a déjà été signalé, nous allons procéder à sa modération.');
-    //}
+        header('location: index.php?action=episode&id=' . $episodeId . '&idmax=' . $idmax);
+    } else {
+        throw new Exception(' aucun identifiant de billet envoyé');
     }
+ }

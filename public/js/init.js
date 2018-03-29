@@ -1,10 +1,14 @@
 //menu burger
 
 var elem = document.querySelector('.sidenav');
-var instance = M.Sidenav.init(elem, options);
+  var instance = M.Sidenav.init(elem, options);
 
-// Or with jQuery
+  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+  // var collapsibleElem = document.querySelector('.collapsible');
+  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
-$(document).ready(function(){
+  // Or with jQuery
+
+  $(document).ready(function(){
     $('.sidenav').sidenav();
-});
+  });

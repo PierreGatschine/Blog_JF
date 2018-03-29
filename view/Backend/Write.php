@@ -1,48 +1,46 @@
 <?php $title = "Ecriture d'un épisode"; ?>
 
+
+
 <?php ob_start(); ?>
 
 <div class="container">
-    <!-- Episode à modifier -->
+
+
+    <!-- Episode à écrire -->
     <?php
-    if(!empty($chapter['id']))
+    if(!empty($episode['id']))
     {
         ?>
-        <form action="index.php?action=updateChapter&amp;id=<?=$episode['id']; ?>" method="post">
-            <input type="text" name="title" value="<?= $episode['title']; ?>">
-            <textarea name="content"><?= $episode['content']; ?></textarea>
+        <form action="index.php?action=addEpisode" method="post">
+            <input type="text" name="title" placeholder="Ajouter un titre">
+            <textarea name="content"></textarea>
             <!-- FIN -->
 
-            <!-- Commentaire à modofier -->
+
+
+     <!-- Episode à modifier -->
             <?php
         }
-        else if(!empty($comment['id']))
+        
+        else
         {
             ?>
-            <form action="index.php?action=updateComment&amp;id=<?=$comment['id']; ?>" method="post">
-                <textarea name="comment"><?= $comment['comment']; ?></textarea>
+            <form action="index.php?action=updateEpisode&amp;id=<?=$episode['id']; ?>" method="post">
+                <input type="text" name="title" value="<?= $episode['title']; ?>">
+                <textarea name="content"><?= $episode['content']; ?></textarea>
                 <!-- FIN -->
 
-                <!-- SI CHAPITRE A CREER  -->
                 <?php
             }
-            else
-            {
-                ?>
-                <form action="index.php?action=addEpisode" method="post">
-                    <input type="text" name="title" placeholder="Ajouter un titre">
-                    <textarea name="content"></textarea>
-                    <!-- FIN -->
-                    <?php
-                }
-                ?>
+            ?>
 
-                <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+            <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
 
-            </form>
-        </div>
+        </form>
+    </div>
 
 
-        <?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
-        <?php require('template.php'); ?>
+    <?php require('templateBackend.php'); ?>

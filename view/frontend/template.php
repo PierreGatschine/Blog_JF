@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 
 
@@ -11,18 +10,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+    
     <link rel="stylesheet" href="public/css/frontend/style.css">
 
 </head>
 
 
 
-<body>
+
 
 
 <!-- Navbar -->
           
-
+<body>
     <div class="navbar-fixed" id="nav">
         <nav class="light-blue darken-4" role="navigation">
             <div class="nav-wrapper container"><a href="#!" class="brand-logo"><strong>JFR</strong></a>
@@ -35,6 +35,8 @@
             </div>
         </nav>
     </div>
+
+
 
 
 <!--Haut de page -->
@@ -61,24 +63,29 @@
 
 <!-- Pied de page -->
 
-
-<footer class="text-left">
-    <img src="images/logo.png" alt="logoPartenaire">
-</footer>
-<footer class="text-center">
-    <a class="btn btn-default" href="#"><i class="fa fa-twitter fa-2x"></i></a>
-    <a class="btn btn-default" href="#"><i class="fa fa-facebook fa-2x"></i></a>
-    <p>Site réalisé par NotreAgenceWeb </p>
-    <img src="Logo" alt="logoAgence">
-
-</footer>
-
-<footer class="text-right">
-    <a href="index.php?action=login">Administration du site</a>
-</footer>
-
-
-
+</body>
+ <footer class="page-footer light-blue darken-4">
+          <div class="container ">
+            <div class="row">
+              <div class="col l6 s12">
+                <h6 class="white-text">Information sur le blog</h6>
+                <img src="Logo"></br>
+                <a class="grey-text text-lighten-4" href="#!">Blog réalisé par NotreAgenceWeb</a>
+                <p class="grey-text text-lighten-4"></p>
+              </br>
+                 <p><i class="tiny material-icons">copyright</i>mars 2018</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h6 class="white-text">Administration du blog</h6>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="index.php?action=login"><i class="small  material-icons ">power_settings_new</i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </footer>
+            
 
 
 <!-- Compiled and minified JavaScript -->
@@ -89,6 +96,6 @@
 </script>
 
 
-</body>
+
 
 </html>
