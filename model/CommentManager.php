@@ -11,7 +11,7 @@ class CommentManager extends Manager
   public function getComments($episodeId)
   {
     $db = $this->dbConnect();
-    $comments = $db->prepare('SELECT id, author, comment, episode_id, report, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') 
+    $comments = $db->prepare('SELECT id, author, comment, episode_id, report, DATE_FORMAT(date_comment, \'%d\%m\%Y\') 
       AS comment_date_fr FROM comment WHERE episode_id = ? ORDER BY date_comment DESC');
     $comments->execute(array($episodeId));
 
@@ -21,7 +21,7 @@ class CommentManager extends Manager
   public function getComment($idComment)
   {
     $db = $this->dbConnect();
-    $comment = $db->prepare('SELECT *, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') AS comment_date_fr FROM comment WHERE id = ?');
+    $comment = $db->prepare('SELECT *, DATE_FORMAT(date_comment, \'%d\%m\%Y\') AS comment_date_fr FROM comment WHERE id = ?');
     $comment->execute(array($idComment));
     $comment = $comment->fetch();
     return $comment;
@@ -40,7 +40,7 @@ class CommentManager extends Manager
   public function getAllComments()
   {
     $db = $this->dbConnect();
-    $comments = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') AS comment_date_fr FROM comment ORDER BY date_comment DESC');
+    $comments = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d\%m\%Y\') AS comment_date_fr FROM comment ORDER BY date_comment DESC');
     return $comments;
   }
 
@@ -96,7 +96,7 @@ class CommentManager extends Manager
     public function getReport()
     {
       $db = $this->dbConnect();
-      $req = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d-%m-%Y à %Hh%imin%ss\') AS comment_date_fr  FROM comment WHERE report= 1 ORDER BY date_comment DESC');
+      $req = $db->query('SELECT *, DATE_FORMAT(date_comment, \'%d\%m\%Y\') AS comment_date_fr  FROM comment WHERE report= 1 ORDER BY date_comment DESC');
       return $req;
     }
   }

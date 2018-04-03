@@ -1,14 +1,38 @@
+
 //menu burger
-
-var elem = document.querySelector('.sidenav');
-  var instance = M.Sidenav.init(elem, options);
-
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+ var elem = document.querySelector('.sidenav');
+  //var instance = M.Sidenav.init(elem, options);
 
   // Or with jQuery
 
   $(document).ready(function(){
+  $('.sidenav').sidenav();
+  });
+        
+ (function($){
+  $(function(){
+
     $('.sidenav').sidenav();
+    
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+
+(function($){
+  $(function(){
+
+    $('.button-collapse').sideNav();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+
+var elem = document.querySelector('.materialboxed');
+  var instance = M.Materialbox.init(elem, options);
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
   });

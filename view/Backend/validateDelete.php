@@ -6,6 +6,8 @@
 
 <div class="container validation">
 
+    <a class="btn-floating btn-large waves-effect waves-light light-blue" href="index.php?action=admin"><i class="material-icons">home</i></a>
+
 
     <!-- AFFICHAGE VALIDATION SI SUPPRESSION DU CHAPITRE -->
     <?php
@@ -24,7 +26,7 @@
     else
     {
         ?>
-        <h4> Supprimer le commentaire de <strong><?=$_GET['author'] ?></strong><br/> l'épisode  <strong><?=$_GET['episode_id'] ?></strong> ?</h4>
+        <h4> Supprimer le commentaire de <strong><?=$_GET['author'] ?></strong><br/> l'épisode  <strong><?=$_GET['episode'] ?></strong> ?</h4>
 
         <a class="waves-effect waves-light btn blue" href="index.php?action=deleteComment&amp;id=<?=$_GET['id']?>">OUI</a>
         <a class="waves-effect waves-light btn blue" href="index.php?action=manageComments">NON</a>

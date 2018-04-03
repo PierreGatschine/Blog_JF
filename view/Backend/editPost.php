@@ -3,15 +3,15 @@
 
 <?php ob_start(); ?>
 
-<header>
-    <h4 class="">Edition</h4>
 
-</header>
+<h4 class="header blue-text">Edition</h4>
 
 
 <div class="container" >
 
-    <p><a href="index.php?action=admin">Retour à la page d'administration du blog</a></p>
+    <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+    
+    <!--<p><a href="index.php?action=admin">Retour à la page d'administration du blog</a></p>-->
 
     <section>
             <!-- Editer un nouvel épisode -->
@@ -30,10 +30,11 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+                
                 <!-- FIN -->
                 <tbody>
 
-                    <?php while ($data = $episodes->fetch())
+                    <?php while ($data = $episode->fetch())
             {
 
                 ?>
@@ -51,7 +52,7 @@
 
             }
 
-            $episodes->closeCursor();
+            $episode->closeCursor();
 
             ?>
 

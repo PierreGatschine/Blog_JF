@@ -6,10 +6,12 @@
 
 <div class="container">
 
+<a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+    
 
     <!-- Episode à écrire -->
     <?php
-    if(!empty($episode['id']))
+    if(!empty($episodes['id']))
     {
         ?>
         <form action="index.php?action=addEpisode" method="post">
@@ -26,16 +28,16 @@
         else
         {
             ?>
-            <form action="index.php?action=updateEpisode&amp;id=<?=$episode['id']; ?>" method="post">
-                <input type="text" name="title" value="<?= $episode['title']; ?>">
-                <textarea name="content"><?= $episode['content']; ?></textarea>
+            <form action="index.php?action=updateEpisode&amp;id=<?=$episodes['id']; ?>" method="post">
+                <input type="text" name="title" value="<?= $episodes['title']; ?>">
+                <textarea name="content"><?= $episodes['content']; ?></textarea>
                 <!-- FIN -->
 
                 <?php
             }
             ?>
 
-            <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+            <button class="btn-floating btn-large right waves-effect waves-light blue hoverable" type="submit" name="action"><i class="material-icons">publish</i></button>
 
         </form>
     </div>

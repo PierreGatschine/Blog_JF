@@ -119,7 +119,7 @@ function updateComment($idComment, $comment)
     if ($update === false) {
         throw new Exception(' Impossible de modifier le commentaire');
     } else {
-        header('location: index.php?action=manageComments');
+        header('location: index.php?action=udapteComment');
     }
 }
 
