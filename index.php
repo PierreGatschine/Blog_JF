@@ -124,7 +124,7 @@ try {
                 }
                 elseif ($_GET['action'] == 'updateEpisode')
                 {
-                    if (isset($_GET['id']) && !empty($_POST['content']) && !empty($_POST['title']))
+                    if (isset($_GET['id']) && isset($_POST['content']) && isset($_POST['title']))
                     {
                         updateEpisode($_GET['id'], $_POST['content'], $_POST['title']);
                     }

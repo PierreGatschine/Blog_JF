@@ -5,24 +5,23 @@
 <?php ob_start(); ?>
 
 
-<header>
-    <h4 class="center blue-text">Gestion des commentaires signalés</h4>
-
-</header>
-
-
 <div class="container">
 
-        <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
 
+    <h4 class="header blue-text">Gestion des commentaires </h4>
+
+<div class="row">
+        <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+</div>
 
 <section>
 
-    <!-- Commentaires signalés -->
+<h5 class="blue-text">Commentaires signalés</h5>
+    
 
-        <?php if($test)
-        {
-        ?>
+<?php if($test)
+{
+?>
       
 <div class="card grey darken-3">
     
@@ -63,17 +62,17 @@
 
             </tbody>
         </table>
-        <?php 
-        } 
-        ?>
-        <!-- FIN -->
+<?php 
+} 
+?>
+       
 
 </div>
 </section>
 
 <section>
     
-    <h4 class="center blue-text">Gestion des commentaires à modérer</h4>
+<h5 class="blue-text">Commentaires à modérer</h5>
 
 
 <div class="card grey darken-3">
@@ -106,15 +105,15 @@
                     </td>
                 </tr>
             <?php
-            }
-            ?>
+         }
+         ?>
 
             <?php $comments->closeCursor();?>
 
             </tbody>
         </table>
-    
-    <!-- FIN -->
+         
+  
 </section>
 </div>
 </div>

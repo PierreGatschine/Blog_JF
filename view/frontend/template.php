@@ -24,18 +24,21 @@
           
 <body>
 
+
+
     <nav class="light-blue darken-4" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container "href="#!" class="brand-logo"><strong>JFR blog</strong></a>
+        <a id="logo-container "href="#!" class="brand-logo"><h6>JFR blog</h6></a>
         <ul class="right hide-on-med-and-down">  
-          <li><a href="http://localhost:8888/Blog_JF/index.php">Page d'accueil</a></li>
+          <li><a href="index.php">Page d'accueil</a></li>
           <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
         </ul> 
+        
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons"></i></a>
         <ul id="nav-mobile" class="sidenav" >
-          <li><a href="http://localhost:8888/Blog_JF/index.php">Page d'accueil</a></li>
-          <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
+          <li><a href="index.php"></a></li>
+          <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php"></a></li>
         </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
 
@@ -59,8 +62,9 @@
 
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-     <h1 class="header center white-text">Billet simple pour l'Alaska</h1>
-     <h2 class="header center white-text">Jean Forteroche</h2>
+     <h3 class="header  white-text"></h3>
+     <div class="header  white-text"><h5>Jean Forteroche</h5><h4><strong>Billet simple pour l'Alaska</strong></h4></div>
+     
      <br />
    </div>
 </div>

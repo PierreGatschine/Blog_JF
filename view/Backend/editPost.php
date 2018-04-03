@@ -4,19 +4,73 @@
 <?php ob_start(); ?>
 
 
-<h4 class="header blue-text">Edition</h4>
+<div class="container">
 
+    <h4 class="header blue-text">Edition</h4>
 
-<div class="container" >
-
+<div class="row">
     <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+</div>    
     
-    <!--<p><a href="index.php?action=admin">Retour à la page d'administration du blog</a></p>-->
 
     <section>
-            <!-- Editer un nouvel épisode -->
-            <a class="waves-effect waves-light btn blue" href="index.php?action=writeEpisode" id="buttonWriteEpisode"><i class="material-icons left">create</i>Editer un nouvel épisode  </a>
-            <!-- FIN -->
+
+<h5 class="blue-text">Publier un épisode</h5>
+    
+      
+<div class="card grey darken-3">
+    
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    
+                    <th class="white-text">Id Episode</th>
+                    <th class="white-text">Titre</th>
+                    <th class="white-text">Contenu</th>
+                    <th class="white-text">Image</th>
+                    <th class="white-text">Date création</th>
+                    <th class="white-text">Créer Supprimer</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            
+            <?php while($data = $episode->fetch())
+            {
+             ?>
+
+               
+                   
+                    <tr>
+                            <td><?= $data['id']; ?></td>
+                            <td><?= $data['title']; ?></td>
+                            <td><?= $data['content']; ?></td>
+                            <td><?= $data['image']; ?></td>
+                            <td><?= $data['creation_date_fr']; ?></td>
+                            <td>
+                                <p><a href="index.php?action=changeEpisode&amp;id=<?=$data['id']?>"><i class="material-icons">create</i></a></p>
+                                <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;title=<?=$data['title']?>"><i class="material-icons">delete</i></a></p>
+                            </td>
+                    </tr>
+               
+            <?php 
+            }
+            ?>
+
+            <?php $episode->closeCursor();?>
+
+            </tbody>
+        </table>
+        
+      
+
+<!--</div>
+</section>
+
+    <section>
+
+           
+            <a class="waves-effect waves-light btn blue" href="index.php?action=writeEpisode" id="buttonWriteEpisode"><i class="material-icons left">create
 
             <table class="responsive-table">
 
@@ -30,25 +84,24 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                
-                <!-- FIN -->
+              
                 <tbody>
 
-                    <?php while ($data = $episode->fetch())
+                    <//?php while ($data = $episode->fetch())
             {
 
                 ?>
                         <tr>
-                            <td><?= $data['id']; ?></td>
-                            <td><?= '<strong>' . $data['title'] . '</strong>'; ?></td>
-                            <td><?= $data['extract']; ?> [...]</td>
+                            <td><//?= $data['id']; ?></td>
+                            <td><//?= '<strong>' . $data['title'] . '</strong>'; ?></td>
+                            <td><//?= $data['extract']; ?> [...]</td>
                             <td>
-                                <p><a href="index.php?action=changeEpisode&amp;id=<?=$data['id']?>"><i class="material-icons">create</i>modifier</a></p>
-                                <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;title=<?=$data['title']?>"><i class="material-icons">delete_forever</i>supprimer</a></p>
+                                <p><a href="index.php?action=changeEpisode&amp;id=<//?=$data['id']?>"><i class="material-icons">create</i></a></p>
+                                <p><a href="index.php?action=validateDelete&amp;id=<//?=$data['id']?>&amp;title=<//?=$data['title']?>"><i class="material-icons">delete</i></a></p>
                             </td>
                         </tr>
-                        <!-- FIN -->
-                        <?php
+                     
+                        <//?php
 
             }
 
@@ -61,7 +114,7 @@
         </div>
     </section>
 
-</div>
+</div>-->
 
 
 <?php $content = ob_get_clean(); ?>

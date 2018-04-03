@@ -57,11 +57,11 @@ function addEpisode ($title,$content)
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter l'épisode !");
     } else {
-        header('Location: index.php?action=post&id=' . $title);
+        header('Location: index.php?action=editPost');
     }
 }
 
-function updateEpisode($episodeId, $title, $content)
+function updateEpisode($episodeId, $title, $content, $image, $create_date)
 {
     $postManager = new EpisodeManager();
     $update = $postManager->updateEpisode($episodeId, $title, $content);

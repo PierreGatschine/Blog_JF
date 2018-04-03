@@ -16,7 +16,7 @@
                         <div class="card hoverable">
                             <div class="card-image">
                                 <img src="public/images/<?= $data['image']?>">
-                                <span class="card-title"><?= htmlspecialchars($data['title']) ?><br /></span>
+                                <span class="card-title"><h5><strong><?= htmlspecialchars($data['title']) ?></strong></h5></span>
                                 <a class="btn-floating halfway-fab waves-effect waves-light light-blue darken-4" href="index.php?action=episode&amp;id=<?= $data['id']?>"><span class="licon icon-black"></span><i class="material-icons">add</i></a>
                             </div>
                             <div class="card-content">

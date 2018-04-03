@@ -8,9 +8,9 @@
 
     <h4 class="header blue-text">Tableau de bord</h4>
 
-
+<div class="row">
     <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="http://localhost:8888/Blog_JF/index.php"><i class="material-icons">cancel</i></a>
-    
+</div>    
     <!--<p><a href="http://localhost:8888/Blog_JF/index.php"> Se déconnecter</a></p>-->
 
 
@@ -75,16 +75,16 @@
 
 <div class="row">
 
-    <div class="col l4 s12">
+    <div class="col l12 s12">
       <div class="card hoverable grey darken-3">
         <div class="card-content white-text">
             
-            <span class="card-title">Commentaires<br /> signalés</span>
+            <span class="card-title">Gestion <br /> des commentaires</span>
             <p></p>
         </div>
         <div class="card-action">
           <div class="row">
-          <div class="col s2 offset-s8">
+          <div class="col s2 offset-s10">
           <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=manageComments" id="buttonCommentt"><i class="material-icons center">comment</i></a>
         </div>
       </div>
@@ -94,7 +94,7 @@
 
 
 
-<div class="col l4 s12">
+<!--<div class="col l4 s12">
   <div class="card hoverable grey darken-3">
     <div class="card-content white-text">
         
@@ -130,7 +130,7 @@
 </div>
 </div>
 
-</div>
+</div>-->
 
 
 <?php $content = ob_get_clean(); ?>

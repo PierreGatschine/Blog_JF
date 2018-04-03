@@ -1,14 +1,16 @@
 <?php $title = "L'auteur"; ?>
 
+
 <?php ob_start(); ?>
 
 
 <div class="container">
 
 
-
+<div class="row"></div>
+<div class="row">
     <a class="btn-floating btn-large waves-effect waves-light light-blue darken-4" href="index.php"><i class="material-icons">home</i></a>
-
+</div>
     <div class="row">
 
         <div class="col s12"><h3> A propos de l'auteur</h3></div>

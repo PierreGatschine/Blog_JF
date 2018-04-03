@@ -7,9 +7,9 @@
 <div class="container" >
 
     <h4 class="header blue-text">Liste des épisodes</h4>
-
+<div class="row">
     <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
-    
+</div>    
 
     <div class="row">
         <?php while ($data = $episodes->fetch())
@@ -28,7 +28,8 @@
             <div class="card-action">
               <div class="row">
                 <div class="col s2 offset-s8">
-                  <a class="btn-floating btn-large waves-effect waves-light blue" href="<a href="index.php?action=changeEpisode&amp;id=<?=$data['id']?> id="buttonCreate"><i class="material-icons center">create</i></a>
+                  <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=changeEpisode&amp;id=<?=$data['id']?> id="buttonCreate"><i class="material-icons center">create</i></a>
+
                 </div>
               </div>
             </div>
