@@ -7,7 +7,7 @@
 <div class="container" >
 <div class="row"></div>
 <div class="row">
-    <a class="btn-floating btn-large waves-effect waves-light light-blue darken-4" href="index.php"><i class="material-icons">home</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light light-blue darken-4 hoverable" href="index.php"><i class="material-icons">home</i></a>
 </div>
 
 
@@ -19,8 +19,8 @@
         <div class="row">
 
             <div class="card">
-                <div class="card-image ">
-                    <img src="public/images/<?= $episode['image']?>" alt="bookCover" >
+                <div class="card-image">
+                    <img src="public/images/<?= $episode['image']?>" alt="bookCover">
                     <span class="card-title"><h4>Jean Forteroche</h4><h4><strong>Billet simple pour l'Alaska</strong></h4><h4><strong><?= htmlspecialchars($episode['title']) ?></strong></h4></span>
                     
                 </div>

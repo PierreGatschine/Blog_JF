@@ -62,7 +62,7 @@
     <div class="card-action">
       <div class="row">
       <div class="col s2 offset-s8">
-      <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=editPost" id="buttonedit"><i class="material-icons center">publish</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=editEpisode" id="buttonedit"><i class="material-icons center">publish</i></a>
   </div>
 </div>
 </div>

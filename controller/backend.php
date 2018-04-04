@@ -44,7 +44,7 @@ function post()
 function editEpisode()
 {
     $episodeManager = new EpisodeManager();
-    $post = $episodeManager->getEpisodes();
+    $posts = $episodeManager->getEpisodes();
 
     require('view/backend/editPost.php');
 }
@@ -57,14 +57,14 @@ function addEpisode ($title,$content)
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter l'épisode !");
     } else {
-        header('Location: index.php?action=editPost');
+        header('Location: index.php?action=editEpisode');
     }
 }
 
 function updateEpisode($episodeId, $title, $content, $image, $create_date)
 {
     $postManager = new EpisodeManager();
-    $update = $postManager->updateEpisode($episodeId, $title, $content);
+    $update = $postManager->updateEpisode($episodeId, $title, $content, $image, $create_date);
     if ($update === false)
     {
         throw new Exception(" impossible de modifier l'épisode !");
@@ -88,7 +88,7 @@ function deleteEpisode($episodeId)
     $delete = $postManager->deleteEpisode($episodeId);
     if ($delete === false)
     {
-        throw new Exception("impossible de modifier l'episode !" );
+        throw new Exception("impossible de supprimer l'episode !" );
     }
     else
     {
@@ -109,7 +109,7 @@ function changeComment($commentId)
 {
     $commentManager = new CommentManager();
     $comment = $commentManager->getComments($commentId);
-    require('view/backend/manageComments.php');
+    require('view/backend/updateComments.php');
 }
 
 function updateComment($idComment, $comment)

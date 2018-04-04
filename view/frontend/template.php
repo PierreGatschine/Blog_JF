@@ -16,56 +16,38 @@
 </head>
 
 
-
-
-
-
 <!-- Navbar -->
           
 <body>
 
 
-
+<div class="navbar-fixed">
     <nav class="light-blue darken-4" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container "href="#!" class="brand-logo"><h6>JFR blog</h6></a>
+        <a id="logo-container " href="index.php" class="brand-logo"><h5>JFR blog</h5></a>
+        <a href="#" data-activites="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">  
           <li><a href="index.php">Page d'accueil</a></li>
-          <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
+          <li><a href="index.php?action=author">L'auteur</a></li>
         </ul> 
-        
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons"></i></a>
-        <ul id="nav-mobile" class="sidenav" >
-          <li><a href="index.php"></a></li>
-          <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php"></a></li>
+        <ul id="mobile-demo" class="side-nav">
+          <li><a href="index.php"><i class="material-icons">home</i></a></li>
+          <li><a href="index.php?action=author"><i class="material-icons">person</i></a></li>
         </ul>
       </div>
     </nav>
-
-
-
-        <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        
-
-      <ul class="sidenav" id="nav-mobile">
-        <li><a href="http://localhost:8888/Blog_JF/index.php">Page d'accueil</a></li>
-        <li><a href="http://localhost:8888/Blog_JF/view/frontend/author.php">L'auteur</a></li>
-         <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>-->
-      
-   
+</div>
 
 
 
 <!--Haut de page -->
 
-
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-     <h3 class="header  white-text"></h3>
-     <div class="header  white-text"><h5>Jean Forteroche</h5><h4><strong>Billet simple pour l'Alaska</strong></h4></div>
-     
-     <br />
+      <br>
+     <h5 class="header white-text">Jean Forteroche</h3>
+      <h4 class="header white-text"><strong>Billet simple pour l'Alaska</strong></h4>
+     <br>
    </div>
 </div>
 
@@ -83,40 +65,41 @@
 <footer class="page-footer light-blue darken-4">
   <div class="container-fluid center">
     <div class="row">
+
       <div class="col l4 s12">
-        <h6 class="white-text center-align">Information sur le blog</h6>
-        <p>Dernier livre paru chez:</p>
+        <h6 class="white-text center-align">Dernier livre paru</h6>
+        <img src="public/images/iceberg.png" class="circle responsive-img" width="50" position="center-align" alt="Iceberg">
         <a class="amber-text text-lighten-4" href="#!"><em>Maison d'édition de l' Iceberg</em></a>
-        <img class="materialboxed" position="center-align" width="50" src="public/images/iceberg.png" alt="Iceberg">
-        
-
-
       </div>
+
       <div class="col l4 s12">
         <h6 class="white-text center">Réseaux sociaux</h6>
-
+        <br>
         <a class="waves-effect waves-light btn-floating social facebook">
-        <i class="fa fa-facebook">Facebook</i></a>
-        <br/><br/>
-         <a class="waves-effect waves-light btn-floating social twitter">
+        <i class="fa fa-facebook">Facebook</i></a><a class="waves-effect waves-light btn-floating social twitter">
         <i class="fa fa-twitter">Twitter</i></a>
+        
+         
+      </div>
 
-        </div>
-        <div class="col l4 s12">
+      <div class="col l4 s12">
           <h6 class="white-text center">Administration du blog</h6>
           <ul>
             <li><a class="center white-text" href="index.php?action=login"><i class="small material-icons">power_settings_new</i></a></li>
           </ul>
-        </div>
       </div>
     </div>
+  </div>
+
     <div class="footer-copyright">
-      <div class="container center">
-        <p> Mars 2018 - Blog réalisé par NotreAgenceWeb</p>
-        <img class="materialboxed" position="absolute"  width="50" src="public/images/NotreAgenceWeb.png" alt="NotreAgenceWeb">
+      <div class="container">
+        <div class="center"><p> Mars 2018 - Blog réalisé par NotreAgenceWeb</p></div>
+      
+        <div class="center"><img src="public/images/NotreAgenceWeb.png" class="circle responsive-img" width="50" position="center-align" alt="NotreAgenceWeb"></div>
       </div>
     </div>
-  </footer>
+
+</footer>
 
 
 
@@ -124,10 +107,10 @@
 
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+ <script src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
  <script src="js/materialize.js"></script>
-<script src="public/js/init.js"></script>
+ <script src="public/js/init.js"></script>
 
 
 

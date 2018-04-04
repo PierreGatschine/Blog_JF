@@ -6,6 +6,12 @@ require_once('model/CommentManager.php');
 use \NotreAgenceWeb\blog_JF\Model\EpisodeManager;
 use  \NotreAgenceWeb\blog_JF\Model\CommentManager;
 
+function author()
+{
+    require('view/frontend/author.php');
+}
+
+
 function listEpisodes()
 {
     $episodeManager = new EpisodeManager();

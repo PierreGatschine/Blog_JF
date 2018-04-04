@@ -7,7 +7,9 @@ try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'listEpisodes') {
             listEpisodes();
-        } elseif ($_GET['action'] == 'episode') {
+        }elseif ($_GET['action'] == 'author') {
+            author();
+        }elseif ($_GET['action'] == 'episode') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 episode();
             } else {
@@ -124,9 +126,9 @@ try {
                 }
                 elseif ($_GET['action'] == 'updateEpisode')
                 {
-                    if (isset($_GET['id']) && isset($_POST['content']) && isset($_POST['title']))
+                    if (isset($_GET['id']) && !empty($_POST['content']) && !empty($_POST['title']) && !empty($_POST['image']) && !empty($_POST['create_date']))
                     {
-                        updateEpisode($_GET['id'], $_POST['content'], $_POST['title']);
+                        updateEpisode($_GET['id'], $_POST['content'], $_POST['title'], $_POST['image'],  $_POST['create_date']);
                     }
                     else
                     {

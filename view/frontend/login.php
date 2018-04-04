@@ -13,7 +13,7 @@
 <div class="container">
 
         
-        <div class="col s12"><h5>Connexion l'administration du blog</h5></div>
+        <div class="col s12"><h5>Connexion à l'administration du blog</h5></div>
     
             <!--<div class="">-->
                 <form action="index.php?action=connexion" method="post">

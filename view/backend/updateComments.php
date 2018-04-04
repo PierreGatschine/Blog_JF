@@ -11,49 +11,34 @@
 
 <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
 
-<section>
-    
-    
-<div class="card grey darken-3">
+<?php
+if(!empty($comment['id']))
+{
+?>
+        
+        <form action="index.php?action=updateComment&amp;id=<?=$comment['id']; ?>" method="post">
+            <div class="row">
+                    <div class="input-field col l8 s12">
+                        
+                            <i class="material-icons prefix">title</i>
+                            <label for="title">Titre</label><br />  
+                            <input type="text" name="title" value="<?= $comment['author']; ?>">   
+                    </div>
+                        
+                    <div class="input-field col s12">
+                        <textarea name="comment"><?= $comment['content']; ?></textarea>
+                    </div>       
+            </div>
 
-        <table class="responsive-table">
 
-            <thead>
-                <tr>
-                    <th class="white-text">Episode</th>
-                    <th class="white-text">Auteur</th>
-                    <th class="white-text">Commentaire</th>
-                    <th class="white-text">Date</th>
-                    <th class="white-text">Modifier Suprimer</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-           <?php while($data = $comments->fetch())
-            {
-           ?>
-                <tr>
-                    <td class="white-text"><strong><?= $data['episode_id']; ?></strong></td>
-                    <td class="white-text"><?= $data['author']; ?></td>
-                    <td class="white-text"><strong><?= $data['comment']; ?></strong></td>
-                    <td class="white-text"><?= $data['comment_date_fr']; ?></td>
-                    <td>
-                        <p><a href="index.php?action=changeComment&amp;id=<?=$data['id']?>"><i class="material-icons">create</i><br/></a></p>
-                        <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;auteur=<?=$data['author'] ?>&amp;chapitre=<?=$data['episode_id'] ?>"><i class="material-icons">delete</i><br/></a></p>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
-
+    <!-- Episode à écrire -->
+     
+<?php
+}
+?>
             <?php $comments->closeCursor();?>
 
-            </tbody>
-        </table>
-    
-    <!-- FIN -->
-</section>
+           
 
 
 

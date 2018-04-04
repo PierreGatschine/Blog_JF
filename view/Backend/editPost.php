@@ -13,7 +13,6 @@
 </div>    
     
 
-    <section>
 
 <h5 class="blue-text">Publier un épisode</h5>
     
@@ -62,59 +61,8 @@
             </tbody>
         </table>
         
-      
+</div>     
 
-<!--</div>
-</section>
-
-    <section>
-
-           
-            <a class="waves-effect waves-light btn blue" href="index.php?action=writeEpisode" id="buttonWriteEpisode"><i class="material-icons left">create
-
-            <table class="responsive-table">
-
-
-
-                <thead>
-                    <tr>
-                        <th>Numéro d'identification</th>
-                        <th>Titre</th>
-                        <th>Contenu</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-              
-                <tbody>
-
-                    <//?php while ($data = $episode->fetch())
-            {
-
-                ?>
-                        <tr>
-                            <td><//?= $data['id']; ?></td>
-                            <td><//?= '<strong>' . $data['title'] . '</strong>'; ?></td>
-                            <td><//?= $data['extract']; ?> [...]</td>
-                            <td>
-                                <p><a href="index.php?action=changeEpisode&amp;id=<//?=$data['id']?>"><i class="material-icons">create</i></a></p>
-                                <p><a href="index.php?action=validateDelete&amp;id=<//?=$data['id']?>&amp;title=<//?=$data['title']?>"><i class="material-icons">delete</i></a></p>
-                            </td>
-                        </tr>
-                     
-                        <//?php
-
-            }
-
-            $episode->closeCursor();
-
-            ?>
-
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-</div>-->
 
 
 <?php $content = ob_get_clean(); ?>
