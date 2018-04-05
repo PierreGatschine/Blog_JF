@@ -49,10 +49,10 @@ function editEpisode()
     require('view/backend/editPost.php');
 }
 
-function addEpisode ($title,$content)
+function addEpisode ($title,$content, $image, $create_date)
 {
     $postManager = new EpisodeManager();
-    $affectedLines = $postManager->addEpisode($title, $content);
+    $affectedLines = $postManager->addEpisode($title, $content, $image, $create_date);
 
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter l'épisode !");

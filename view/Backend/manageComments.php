@@ -50,8 +50,8 @@
                     <td class="white-text"><strong><?= $data['comment']; ?></strong></td>
                     <td class="white-text"><?= $data['comment_date_fr']; ?></td>
                     <td>
-                        <p><a href="index.php?action=changeComment&amp;id=<?=$data['id']?>"><i class="material-icons">create</i><br/></a></p>
-                        <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;author=<?=$data['author'] ?>&amp;episode=<?=$data['episode_id'] ?>"><i class="material-icons">delete</i><br/></a></p>
+                        <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=changeComment&amp;id=<?=$data['id']?>"><i class="material-icons">create</i><br/></a></p>
+                        <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;author=<?=$data['author'] ?>&amp;episode=<?=$data['episode_id'] ?>"><i class="material-icons">delete</i><br/></a></p>
                     </td>
                 </tr>
             <?php 
@@ -100,8 +100,8 @@
                     <td class="white-text"><strong><?= $data['comment']; ?></strong></td>
                     <td class="white-text"><?= $data['comment_date_fr']; ?></td>
                     <td>
-                        <p><a href="index.php?action=changeComment&amp;id=<?=$data['id']?>"><i class="material-icons">create</i><br/></a></p>
-                        <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;auteur=<?=$data['author'] ?>&amp;chapitre=<?=$data['episode_id'] ?>"><i class="material-icons">delete</i><br/></a></p>
+                        <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable"  href="index.php?action=changeComment&amp;id=<?=$data['id']?>"><i class="material-icons">create</i><br/></a></p>
+                        <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;auteur=<?=$data['author'] ?>&amp;chapitre=<?=$data['episode_id'] ?>"><i class="material-icons">delete</i><br/></a></p>
                     </td>
                 </tr>
             <?php

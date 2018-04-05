@@ -30,6 +30,16 @@ if(!empty($episode['id']))
                         
                     <div class="input-field col s12">
                         <textarea name="content"><?= $episode['content']; ?></textarea>
+                    </div>
+
+                    <div class="file-field input-field col l8 s12">
+                        <div class="btn-floating waves-effect waves-light light-blue hoverable">
+                            <span><i class="material-icons prefix">file_upload</i></span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
                     </div>       
             </div>
 
@@ -54,7 +64,15 @@ else
                         <textarea name="content"></textarea>
                         <!--<textarea id="content" name="content" class="materialize-textarea"></textarea>-->    
                     </div>
-                </div>
+                <div class="file-field input-field col l8 s12">
+                        <div class="btn-floating waves-effect waves-light light-blue hoverable">
+                            <span><i class="material-icons prefix">file_upload</i></span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                </div>    
             </div>
                 
 

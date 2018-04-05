@@ -24,7 +24,7 @@
             </div>
             <div class="card-action">
               <div class="row">
-      <div class="col s2 offset-s8">
+      <div class="col s2 offset-s9">
               <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=listPosts" id="buttonList"><i class="material-icons center">list</i></a>
           </div>
         </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="card-action">
           <div class="row">
-      <div class="col s2 offset-s8">
+      <div class="col s2 offset-s9">
           <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=writeEpisode" id="buttonWrite"><i class="material-icons center">create</i></a>
       </div>
     </div>
@@ -61,7 +61,7 @@
     </div>
     <div class="card-action">
       <div class="row">
-      <div class="col s2 offset-s8">
+      <div class="col s2 offset-s9">
       <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=editEpisode" id="buttonedit"><i class="material-icons center">publish</i></a>
   </div>
 </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="card-action">
           <div class="row">
-          <div class="col s2 offset-s10">
+          <div class="col s2 offset-s9">
           <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=manageComments" id="buttonCommentt"><i class="material-icons center">comment</i></a>
         </div>
       </div>
