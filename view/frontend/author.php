@@ -13,20 +13,20 @@
     </div>
 
     <div class="section">
-            <div class="row">
+        <div class="row">
 
-                <div class="col s12">
-                    <div class="card-panel grey darken-4 z-depth-1">
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                        <img src="public/images/author.jpg" class="circle responsive-img" width="230" position="left-align"alt="imageAuthor" >
-                        <span class="card-title white-text"><h4>Jean Forteroche</h4>
-                            <h4><strong>A propos de l'auteur</strong></h4></span>
+            <div class="col s12">
+                <div class="card-panel grey darken-4 z-depth-1">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <img src="public/images/author.jpg" class="circle responsive-img" width="230" position="left-align"alt="imageAuthor" >
+                    <span class="card-title white-text"><h4>Jean Forteroche</h4>
+                        <h4><strong>A propos de l'auteur</strong></h4></span>
                         
                     </div>
                 </div>
             </div>
 
-     </div>
+        </div>
         <div class="row">
 
             
@@ -49,9 +49,9 @@
             </div>
 
         </div> 
-</div>
+    </div>
 
 
-<?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+    <?php require('template.php'); ?>

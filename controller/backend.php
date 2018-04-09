@@ -49,29 +49,29 @@ function editEpisode()
     require('view/backend/editPost.php');
 }
 
-function addEpisode ($title,$content, $image, $create_date)
+function addEpisode ($title,$content)
 {
     $postManager = new EpisodeManager();
-    $affectedLines = $postManager->addEpisode($title, $content, $image, $create_date);
+    $affectedLines = $postManager->addEpisode($title, $content);
 
     if ($affectedLines === false) {
         throw new Exception("Impossible d'ajouter l'épisode !");
     } else {
-        header('Location: index.php?action=editEpisode');
+        header('Location: index.php?action=listPosts');
     }
 }
 
-function updateEpisode($episodeId, $title, $content, $image, $create_date)
+function updateEpisode($episodeId, $title, $content)
 {
     $postManager = new EpisodeManager();
-    $update = $postManager->updateEpisode($episodeId, $title, $content, $image, $create_date);
+    $update = $postManager->updateEpisode($episodeId, $title, $content);
     if ($update === false)
     {
         throw new Exception(" impossible de modifier l'épisode !");
     }
     else
     {
-        header('location: index.php?action=editEpisode');
+        header('location: index.php?action=listPosts');
     }
 }
 
@@ -108,7 +108,7 @@ function manageComments()
 function changeComment($commentId)
 {
     $commentManager = new CommentManager();
-    $comment = $commentManager->getComments($commentId);
+    $comment = $commentManager->getComment($commentId);
     require('view/backend/updateComments.php');
 }
 
@@ -119,7 +119,7 @@ function updateComment($idComment, $comment)
     if ($update === false) {
         throw new Exception(' Impossible de modifier le commentaire');
     } else {
-        header('location: index.php?action=udapteComment');
+        header('location: index.php?action=manageComments');
     }
 }
 
@@ -128,9 +128,9 @@ function deleteComment($idComment)
     $commentManager = new CommentManager();
     $delete = $commentManager->deleteComment($idComment);
     if ($delete === false) {
-       throw new Exception("Impossible d'effacer le commentaire !");
-   } else {
-      header('location: index.php?action=manageComments');
-  }
+     throw new Exception("Impossible d'effacer le commentaire !");
+ } else {
+  header('location: index.php?action=manageComments');
+}
 }
 

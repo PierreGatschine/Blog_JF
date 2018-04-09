@@ -13,7 +13,7 @@ function login()
 function connexion($login, $password)
 {
     $userManager = new userManager();
-    $user = $userManager->connect($login, $password);
+    $user = $userManager->connect($login, sha1($password));
 
 
     if (!empty($user))

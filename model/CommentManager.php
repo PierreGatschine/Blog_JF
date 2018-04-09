@@ -63,7 +63,7 @@ class CommentManager extends Manager
   }
 
 
-    public function updateComment($idComment, $comment) // fonction qui permet de modifier un commentaire
+    public function updateComment($idComment, $comment) 
     {
       $db = $this->dbConnect();
       $update = $db->prepare('UPDATE comment SET comment = ?, report = 0 WHERE id = ?');

@@ -54,4 +54,4 @@ function reportComment($idComment, $episodeId, $idMax)
     } else {
         throw new Exception(' aucun identifiant de billet envoyé');
     }
- }
+}

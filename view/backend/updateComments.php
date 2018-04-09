@@ -1,47 +1,55 @@
-<?php $title = "Gestion des commentaires à modérer"; ?>
+<?php $title = "Commentaires à modérer"; ?>
 
 <?php ob_start(); ?>
 
-<header>
-    <h4 class="center blue-text">Gestion des commentaires à modérer</h4>
 
-</header>
 
- <div class="container">
 
-<a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+<div class="container">
 
-<?php
-if(!empty($comment['id']))
-{
-?>
+  <h4 class="header blue-text">Commentaires à modérer</h4>  
+
+<div class="row">
+    <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=admin"><i class="material-icons">home</i></a>
+</div>
+
+
+    <?php
+    if(!empty($comment['id']))
+    {
+    ?>
         
         <form action="index.php?action=updateComment&amp;id=<?=$comment['id']; ?>" method="post">
             <div class="row">
-                    <div class="input-field col l8 s12">
-                        
-                            <i class="material-icons prefix">title</i>
-                            <label for="title">Titre</label><br />  
-                            <input type="text" name="title" value="<?= $comment['author']; ?>">   
-                    </div>
-                        
-                    <div class="input-field col s12">
-                        <textarea name="comment"><?= $comment['content']; ?></textarea>
-                    </div>       
+                <div class="input-field col l8 s12">
+                    
+                    <i class="material-icons prefix">title</i>
+                    <label for="title">Titre</label><br />  
+                    <input type="text" name="title" value="<?= $comment['author']; ?>">   
+                </div>
+                
+                <div class="input-field col s12">
+                    <textarea name="comment"><?= $comment['comment']; ?></textarea>
+                </div>       
             </div>
+    <?php
+    }else 
+    {
+        throw new Exception('Tous les champs ne sont pas remplis !');
+    }
+    ?>
 
 
-    <!-- Episode à écrire -->
-     
-<?php
-}
-?>
-            <?php $comments->closeCursor();?>
-
-           
-
+            <div class="row">    
+                <div class="input-field col l10 s12">
+                    <button class="btn-floating btn-large right waves-effect waves-light blue hoverable" type="submit" name="action"><i class="material-icons">publish</i></button>
+                </div>
+            </div>
+        </form>   
+</div>
 
 
-<?php $content = ob_get_clean(); ?>
+        <?php $content = ob_get_clean(); ?>
 
-<?php require('templateBackend.php'); ?>
+        <?php require('templateBackend.php'); ?>
+

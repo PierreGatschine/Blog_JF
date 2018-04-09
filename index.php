@@ -51,7 +51,8 @@ try {
             listEpisodes();
         }
 
-        // Backend
+
+    /*---Backend--- */
         
         else
 
@@ -126,9 +127,9 @@ try {
                 }
                 elseif ($_GET['action'] == 'updateEpisode')
                 {
-                    if (isset($_GET['id']) && !empty($_POST['content']) && !empty($_POST['title']) && !empty($_POST['image']) && !empty($_POST['create_date']))
+                    if (isset($_GET['id']) && !empty($_POST['content']) && !empty($_POST['title']))
                     {
-                        updateEpisode($_GET['id'], $_POST['content'], $_POST['title'], $_POST['image'],  $_POST['create_date']);
+                        updateEpisode($_GET['id'], $_POST['title'], $_POST['content']);
                     }
                     else
                     {
@@ -184,6 +185,6 @@ try {
 
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
-    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 10 secondes';
-    //echo '<META HTTP-EQUIV="Refresh" CONTENT="10;index.php?action=listEpisodes">';
+    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 8 secondes';
+    //echo '<META HTTP-EQUIV="Refresh" CONTENT="8;index.php?action=listEpisodes">';
 }

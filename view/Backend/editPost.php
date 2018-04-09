@@ -19,11 +19,11 @@
       
 <div class="card grey darken-3">
     
-        <table class="responsive-table">
+        <table class="responsive-table" id="array">
             <thead>
                 <tr>
                     
-                    <th class="white-text">Id Episode</th>
+                    <th class="blue-text">Id Episode</th>
                     <th class="white-text">Titre</th>
                     <th class="white-text">Contenu</th>
                     <th class="white-text">Image</th>
@@ -34,21 +34,21 @@
 
             <tbody>
             
-            <?php while($data = $episode->fetch())
+            <?php while($data = $posts->fetch())
             {
              ?>
 
                
                    
                     <tr>
-                            <td><?= $data['id']; ?></td>
-                            <td><?= $data['title']; ?></td>
-                            <td><?= $data['content']; ?></td>
-                            <td><?= $data['image']; ?></td>
-                            <td><?= $data['creation_date_fr']; ?></td>
+                            <td class="blue-text"><?= $data['id']; ?></td>
+                            <td class="white-text"><?= $data['title']; ?></td>
+                            <td class="white-text"><?= $data['content']; ?></td>
+                            <td class="white-text"><?= $data['image']; ?></td>
+                            <td class="white-text"><?= $data['creation_date_fr']; ?></td>
                             <td>
-                                <p><a href="index.php?action=changeEpisode&amp;id=<?=$data['id']?>"><i class="material-icons">create</i></a></p>
-                                <p><a href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;title=<?=$data['title']?>"><i class="material-icons">delete</i></a></p>
+                                <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=changeEpisode&amp;id=<?=$data['id']?>"><i class="material-icons">create</i></a></p>
+                                <p><a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=validateDelete&amp;id=<?=$data['id']?>&amp;title=<?=$data['title']?>"><i class="material-icons">delete</i></a></p>
                             </td>
                     </tr>
                
@@ -56,7 +56,7 @@
             }
             ?>
 
-            <?php $episode->closeCursor();?>
+            <?php $posts->closeCursor();?>
 
             </tbody>
         </table>
