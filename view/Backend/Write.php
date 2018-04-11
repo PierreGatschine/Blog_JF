@@ -32,7 +32,10 @@
                 <div class="input-field col s12">
                     <textarea name="content"><?= $episode['content']; ?></textarea>
                 </div>
+            </div>
 
+        <form action="index.php?action=updateEpisode&amp;id=<?=$episode['id']; ?>" method="post" enctype="multipart/form-data">
+            <div class="row">
                 <div class="file-field input-field col l8 s12">
                     <i class="material-icons prefix">insert_photo</i>
                         <span><i class="material-icons prefix">insert_photo</i></span>

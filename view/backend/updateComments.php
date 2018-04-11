@@ -23,8 +23,8 @@
             <div class="row">
                 <div class="input-field col l8 s12">
                     
-                    <i class="material-icons prefix">title</i>
-                    <label for="title">Titre</label><br />  
+                    <i class="material-icons prefix">person</i>
+                    <label for="title">Pseudo</label><br />  
                     <input type="text" name="title" value="<?= $comment['author']; ?>">   
                 </div>
                 
