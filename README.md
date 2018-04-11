@@ -1,20 +1,20 @@
 # Blog_JF
 
-Blog d'écrivain
-Projet 3 CPM-Dev
+##Blog d'écrivain
+##Projet 3 CPM-Dev
 
-Blog qui a été construit en fonction des préconisations prévues par le cahier des charges.
+Blog qui a été construit en respectant les préconisations prévues par le cahier des charges.
 
 Extrait du cahier des charges (l'intégralité du cahier se trouve dans le dépôt au format PDF)
 
-CONTRAINTES TECHNIQUES
+##CONTRAINTES TECHNIQUES
 
-BESOIN CLIENT
+###BESOIN CLIENT
 
 Développer un (moteur de) blog 
 en PHP et MySQL
 
-Architecture  du blog 
+Architecture du blog 
 CRUD
 
 Interaction du lecteur 
@@ -25,7 +25,7 @@ Connexion à l’interface d’administration par mot de passe
 Interface de rédaction
 WYSIWYG TinyMCE
 
-PRECONISATIONS FONCTIONELLES 
+###PRECONISATIONS FONCTIONELLES 
 
 Architecture  du blog
 Design pattern MVC
@@ -39,21 +39,21 @@ Langage SQL
 Feuille de style
 Bibliothèque Materialize css
 
-FONCTIONALITÉES 
+##FONCTIONALITÉS 
 
-FRONTEND
+###FRONTEND
 
 Vues des épisodes
 Ajout d'un commentaire
 Signalement d'un commentaire
 
-ADMINISTRATION
+###ADMINISTRATION
 
 Ecrire ou modifier un épisode
 Interface WYSIWYG Tiny MCE
 Ajouter une image
 
-Modérer un commentaire signalés ou pas 
+Modérer un commentaire signalés
 Modérer -> interface WYSIWYG Tiny MCE
 Supprimer -> retirer de la BDD
 
