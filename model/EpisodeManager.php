@@ -32,11 +32,11 @@ class EpisodeManager extends Manager
         return $req;
     }
 
-    public function addEpisode($content, $title, $image)
+    public function addEpisode($content, $title)
     {
         $db = $this->dbConnect();
-        $episode = $db->prepare('INSERT INTO episode(title, content, image, create_date) VALUES (?,?,?,NOW())');
-        $affectedLines = $episode->execute(array($title, $content, $image));
+        $episode = $db->prepare('INSERT INTO episode(title, content, create_date) VALUES (?,?,NOW())');
+        $affectedLines = $episode->execute(array($title, $content));
         return $affectedLines;
     }
 

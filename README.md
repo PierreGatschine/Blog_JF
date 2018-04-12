@@ -57,7 +57,7 @@ Ajouter une image
 Modérer un commentaire signalés
 
 Modérer -> interface WYSIWYG Tiny MCE
-
+Blog_JF
 Supprimer -> retirer de la BDD
 
 

@@ -49,7 +49,7 @@ function editEpisode()
     require('view/backend/editPost.php');
 }
 
-function addEpisode ($title,$content,$imgfiles)
+function addEpisode ($title,$content)
 {
     /*if(isset($imageFiles)&&($imageFiles['image']['name'])){
             $fileManager = new FileManager();
@@ -59,8 +59,7 @@ function addEpisode ($title,$content,$imgfiles)
             $imgUrl = 'web/img/portfolio/thumbnails/'.$chapter.'.'.$img['extension'];
         }else{
             ($affectedLines === false) {
-        throw new Exception("Impossible d'ajouter une image !");
-}*/
+        throw new Exception("Impossible d'ajouter une image !");*/
 
 
     $postManager = new EpisodeManager();

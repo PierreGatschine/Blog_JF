@@ -26,7 +26,7 @@
       <div class="nav-wrapper container">
         <a id="logo-container " href="index.php" class="brand-logo"><h5>JFR blog</h5></a>
         <!--<a href="#" data-activites="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
         <ul class="right hide-on-med-and-down">  
           <li><a href="index.php">Page d'accueil</a></li>
           <li><a href="index.php?action=author">L'auteur</a></li>
@@ -40,7 +40,7 @@
   </div>
 
 
-<ul id="slide-out" class="sidenav">
+<!--<ul id="slide-out" class="sidenav">
     <li><div class="user-view">
       <div class="background">
         <img src="">
@@ -49,7 +49,7 @@
       </li>
     <li><a href="index.php"><i class="material-icons">home</i></a></li>
     <li><a href="index.php?action=author"><i class="material-icons">person</i></a></li>
-  </ul>
+  </ul>-->
   <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
         
 
@@ -91,14 +91,17 @@
         <div class="col l4 s12">
           <h6 class="white-text center">Réseaux sociaux</h6>
           <br>
+
+
+  
           <ul>
 
-         <li> <a class="waves-effect waves-light"><i class="fab fa-facebook-f"></i></li>
-            <a class="waves-effect waves-light btn-floating social twitter">
+         <!--<li> <a class="waves-effect waves-light"><i class="fab fa-facebook-f"></i></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
               <i class="fa fa-twitter">Twitter</i></a>
-              
-              
-            </div>
+           <li><a class="waves-effect waves-light social-icon btn twitter"><i class="fa fa-twitter"></i></a></li>-->   
+          </ul>    
+        </div>
 
             <div class="col l4 s12">
               <h6 class="white-text center">Administration du blog</h6>
@@ -129,8 +132,7 @@
       <script src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
       <script src="js/materialize.js"></script>
       <script src="public/js/init.js"></script>
-
-
+      
 
 
 

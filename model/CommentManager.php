@@ -3,7 +3,7 @@
 namespace NotreAgenceWeb\blog_JF\Model;
 
 require_once("model/Manager.php");
-require_once("model/Comment.php");
+
 
 
 class CommentManager extends Manager
