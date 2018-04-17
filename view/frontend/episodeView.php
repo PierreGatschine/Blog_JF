@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class='row'>
-                <div class="col s2 offset-s10">
+                <div class="col s1 offset-s11">
                     <button type='submit' name='btn_comment' class="btn-floating btn-large waves-effect waves-light light-blue darken-4" ><i class="material-icons">send</i></button>
                 </div>
             </div>

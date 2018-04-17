@@ -43,7 +43,7 @@
                     <tr>
                             <td class="blue-text"><?= $data['id']; ?></td>
                             <td class="white-text"><?= $data['title']; ?></td>
-                            <td class="white-text"><?= $data['content']; ?></td>
+                            <td class="white-text"><?= $data['extract']; ?> [...]</td>
                             <td class="white-text"><?= $data['image']; ?></td>
                             <td class="white-text"><?= $data['creation_date_fr']; ?></td>
                             <td>

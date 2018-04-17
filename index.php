@@ -185,6 +185,6 @@ try {
 
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
-    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 8 secondes';
-    //echo '<META HTTP-EQUIV="Refresh" CONTENT="8;index.php?action=listEpisodes">';
+    echo '<br/>Vous allez être redirigé sur la page d\'accueil du blog dans 5 secondes';
+    echo '<META HTTP-EQUIV="Refresh" CONTENT="5;index.php?action=listEpisodes">';
 }

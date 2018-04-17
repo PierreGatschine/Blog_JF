@@ -3,34 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="998fdcbe-cf85-478b-905c-395c772b81bf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/backend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Comment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Episode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/EpisodeManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/EpisodeManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/frontend/errorView.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/frontend/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/frontend/template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/fileManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/fileManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Backend/Write.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/Backend/Write.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/frontend/episodeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/frontend/episodeView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,20 +41,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="validateDelete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/backend/validateDelete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+            <state relative-caret-position="572">
+              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backend.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/backend.php">
+      <file leaf-file-name="Write.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/backend/Write.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1456">
-              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+            <state relative-caret-position="329">
+              <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -84,17 +62,26 @@
       <file leaf-file-name="fileManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/fileManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+            <state relative-caret-position="129">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EpisodeManager.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/EpisodeManager.php">
+      <file leaf-file-name="backend.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/backend.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="104">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Manager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -163,8 +150,8 @@
         <option value="$PROJECT_DIR$/view/backend/manageComments.php" />
         <option value="$PROJECT_DIR$/view/backend/updateComments.php" />
         <option value="$PROJECT_DIR$/controller/backend.php" />
-        <option value="$PROJECT_DIR$/model/fileManager.php" />
         <option value="$PROJECT_DIR$/model/EpisodeManager.php" />
+        <option value="$PROJECT_DIR$/model/fileManager.php" />
       </list>
     </option>
   </component>
@@ -176,9 +163,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="259" />
-    <option name="y" value="94" />
-    <option name="width" value="1367" />
+    <option name="x" value="830" />
+    <option name="y" value="22" />
+    <option name="width" value="850" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -215,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,7 +258,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,6 +339,8 @@
       <workItem from="1522913783638" duration="802000" />
       <workItem from="1523287052862" duration="2341000" />
       <workItem from="1523524185839" duration="351000" />
+      <workItem from="1523549164426" duration="218000" />
+      <workItem from="1523880089630" duration="1360000" />
     </task>
     <task id="LOCAL-00001" summary="Namespace">
       <created>1520505304955</created>
@@ -399,7 +388,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184109000" />
+    <option name="totallyTimeSpent" value="185687000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -411,9 +400,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="259" y="94" width="1367" height="1028" extended-state="0" />
+    <frame x="830" y="22" width="850" height="1028" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8577024" visible="true" weight="0.16603774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8577024" visible="true" weight="0.16955446" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.46544716" weight="0.11945392" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5225225" side_tool="true" weight="0.02202643" />
@@ -427,11 +416,11 @@
       <window_info id="Favorites" order="2" sideWeight="0.14229766" side_tool="true" weight="0.27" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="10" weight="0.32992035" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="10" weight="0.32992035" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4774775" visible="true" weight="0.42967033" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
@@ -578,13 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Episode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Episode.php" />
     <entry file="file://$PROJECT_DIR$/model/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -593,13 +576,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/Backend/post.php" />
-    <entry file="file://$PROJECT_DIR$/view/backend/Write.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/frontend/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -650,13 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/frontend/errorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/view/frontend/errorView.php" />
     <entry file="file://$PROJECT_DIR$/view/frontend/listEpisodesView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -713,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/backend/validateDelete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/backend/manageComments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -727,10 +690,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Comment.php">
+    <entry file="file://$PROJECT_DIR$/model/Comment.php" />
+    <entry file="file://$PROJECT_DIR$/controller/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="38" />
+        <state relative-caret-position="211">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2626">
+          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/EpisodeManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/backend/validateDelete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/backend/Write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -741,38 +733,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/fileManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+        <state relative-caret-position="129">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/backend.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/EpisodeManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="104">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>

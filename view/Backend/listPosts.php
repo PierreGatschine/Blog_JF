@@ -27,9 +27,8 @@
 
         <div class="card-action">
           <div class="row">
-            <div class="col s2 offset-s8">
-              <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=changeEpisode&amp;id=<?=$data['id']?> id="buttonCreate"><i class="material-icons center">create</i></a><br/><br/>
-              <a class="btn-floating btn-large waves-effect waves-light light-blue hoverable" href="index.php?action=validateDelete&amp;id=<?=$data['id']?>id="buttonDelete"><i class="material-icons">delete</i></a>
+            <div class="col s1 offset-s11">
+              <a class="btn-floating btn-large waves-effect waves-light blue" href="index.php?action=changeEpisode&amp;id=<?=$data['id']?> id="buttonCreate"><i class="material-icons center">create</i></a>
             </div>
           </div>
         </div>

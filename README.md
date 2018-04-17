@@ -39,7 +39,7 @@ Langage SQL
 Feuille de style
 Bibliothèque Materialize css
 
-## FONCTIONALITÉS 
+## FONCTIONNALITÉS 
 
 ### FRONTEND
 
