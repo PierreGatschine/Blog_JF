@@ -10,18 +10,17 @@ class fileManager
     public function upload($image, $file_url)
     {
         if (!empty($_FILES)) {
-        $file_name = $_FILES['fichier']['name'];
+        $file_name = $_FILES['image']['name'];
         $file_extension = strchr($file_name, ".");
 
-        $file_tmp_name = $_FILES['fichier']['tmp_name'];
-        $file_dest = 'files/' .$file_name;
+        $file_tmp_name = $_FILES['image']['tmp_name'];
+        $file_dest = 'images/' .$file_name;
 
         $extension_autorisees = array('.png', '.jpg', '.jpeg');
 
         if(in_array($file_extension, $extension_autorisees)){
             if (move_uploaded_file($file_tmp_name, $file_dest)) {
-                $req = $db->prepare('INSERT INTO files(name, file_url) values(?,?)');
-                $req->execute(array($file_name, $file_dest));
+                
 
                 echo "Fichier envoyé avec succés";
             }else{

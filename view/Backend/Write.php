@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <textarea name="content"><?= $pots['content']; ?></textarea>
+                    <textarea name="content"><?= $posts['content']; ?></textarea>
                 </div>
             </div>
 
@@ -89,10 +89,10 @@
 
                     <i class="material-icons prefix">insert_photo</i>
                     <label for="photo">Ajouter une image</label><br />
-                    <input type="file" name="image">
+                    <input type="file" name="fichier">
                 </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <!--<input class="file-path validate" type="text">-->
                         </div>
                     </div>    
                 </div>

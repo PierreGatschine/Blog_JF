@@ -83,9 +83,9 @@ try {
                 }
                 elseif ($_GET['action'] == 'addEpisode')
                 {
-                    if (!empty($_POST['content']) && !empty($_POST['title']))
+                    if (!empty($_POST['content']) && !empty($_POST['title']) && !empty($_FILES['image']['name']))
                     {
-                        addEpisode($_POST['content'], $_POST['title']);
+                        addEpisode($_POST['content'], $_POST['title'], $_FILES['image']['name']);
                     }
                     else
                     {

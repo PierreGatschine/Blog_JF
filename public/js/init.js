@@ -1,8 +1,5 @@
 
-var elem = document.querySelector('.sidenav');
-  var instance = M.Sidenav.init(elem, options);
-
-
+/* Menu navBar*/
   $(document).ready(function(){
   $('.slide-out').sidenav();
   });
